@@ -1,0 +1,61 @@
+<cu-custom bgColor="bg-white" isBack="{{true}}">
+	<view slot="content">银行卡绑定</view>
+</cu-custom>
+
+
+<!-- 银行卡列表 -->
+<view class="bankList" wx:if="{{sta == 0 && bankData.length != 0}}" wx:for="{{bankData}}" wx:key="index">
+    <image class="BankImgae" src="/image/infoicon/bankList.png" />
+    <view class="bankCard">
+        <view class="bc-box1">
+            <view class="box1-image">
+                <image src="/image/infoicon/bankIcon.png" />
+            </view>
+            <view class="box1-text">{{item.bank_name}}</view>
+            <image class="closer" data-bankid="{{item.bank_id}}" bind:tap="closerBank" src="/image/infoicon/Trash2.png" />
+        </view>
+        <view class="bc-box2">
+            {{item.card_number}}
+        </view>
+    </view>
+</view>
+
+
+<view class="bankList" wx:if="{{sta == 1 && bankData.length != 0}}" wx:for="{{bankData}}" wx:key="index" data-bankid="{{item}}" data-index="{{index}}" bind:tap="setBank">
+    <image class="BankImgae" src="/image/infoicon/bankList.png" />
+    <view class="bankCard">
+        <view class="bc-box1">
+            <view class="box1-image">
+                <image src="/image/infoicon/bankIcon.png" />
+            </view>
+            <view class="box1-text">{{item.bank_name}}</view>
+            <view class="check">
+                <image class="closers" wx:if="{{index == selindex}}"  src="/image/infoicon/select.png" />
+            </view>
+        </view>
+        <view class="bc-box2">
+            {{item.card_number}}
+        </view>
+    </view>
+</view>
+
+
+<view wx:if="{{bankData.length == 0}}" class="noBank">
+    <image src="/image/infoicon/addBank.png" />
+</view>
+<!-- 银行卡列表结束 -->
+
+
+
+<!-- 添加银行卡 -->
+<view class="addBank" wx:if="{{sta == 0}}" bind:tap="gotoBank">
+    添加银行卡
+</view>
+<!-- 添加银行卡结束 -->
+
+
+<!-- 选择银行卡 -->
+<view class="addBank" wx:if="{{sta == 1}}" bind:tap="selBank">
+    确认选择
+</view>
+<!-- 选择银行卡结束 -->

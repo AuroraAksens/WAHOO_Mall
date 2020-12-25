@@ -1,0 +1,118 @@
+<swiper style="height: {{height}};" circular="true" current="{{current}}" duration="500" bindchange="cardSwiper">
+	<swiper-item wx:key>
+		<index id="index"></index>
+	</swiper-item>
+
+	<swiper-item wx:key>
+		<Brand id="brand"></Brand>
+	</swiper-item>
+
+	<swiper-item wx:key>
+		<Cart id="cart"></Cart>
+	</swiper-item>
+
+	<swiper-item wx:key>
+		<!-- 给子组件传值，也就是mine页面，传我这个zdy的跳转页面的方法 -->
+		<mine id="mine" bind:mineJumps="mineJump" bind:getscenes="getscene" bind:showTipss="showTips" bind:showTipss2="onCreateOtherPoster"></mine>
+	</swiper-item>
+
+</swiper>
+
+<view>
+	<view class="cu-bar tabbar bg-white shadow foot" style="height:120rpx">
+
+		<view class="action" bindtap="NavChange" data-cur="0">
+			<view class='cuIcon-cu-image'>
+				<image mode="widthFix" src=" /image/icons/{{current=='0'?'index1':'index'}}.png"></image>
+			</view>
+			<view class="{{current=='0'?'text-cor':'text-gray'}}">首页</view>
+		</view>
+
+		<view class="action" bindtap="NavChange" data-cur="1">
+			<view class='cuIcon-cu-image'>
+				<image style="width: 80rpx;height: 20rpx;margin-bottom: 14rpx;margin-top: 15rpx;" mode="widthFix" src=" /image/icons/{{current=='1'?'brand1':'brand'}}.png"></image>
+			</view>
+			<view class="{{current=='1'?'text-cor':'text-gray'}}">品牌介绍</view>
+		</view>
+
+		<view class="action" bindtap="NavChange" data-cur="2">
+			<view class='cuIcon-cu-image'>
+				<image mode="widthFix" src=" /image/icons/{{current=='2'?'cart1':'cart'}}.png"></image>
+			</view>
+			<view class="{{current=='2'?'text-cor':'text-gray'}}">购物车</view>
+		</view>
+
+		<view class="action" bindtap="NavChange" data-cur="3">
+			<view class='cuIcon-cu-image'>
+				<image mode="widthFix" src="/image/icons/{{current=='3'?'mine1':'mine'}}.png"></image>
+			</view>
+			<view class="{{current=='3'?'text-cor':'text-gray'}}">我的</view>
+		</view>
+
+	</view>
+</view>
+
+
+
+
+<!-- 问题反馈 -->
+<view class="problem" wx:if="{{showTips}}" bind:tap="closeTips">
+	<view class="problem-box" catchtap>
+		<image src="/image/qrcode.png" />
+		<view class="p-text">扫码添加我们的小助手，提出您宝贵的意见或问题反馈</view>
+	</view>
+	<view class="problem-gb" bind:tap="saveCode">
+		保存二维码
+	</view>
+</view>
+<!-- 问题反馈结束 -->
+
+
+
+<!-- 推广 -->
+<view class="extension" wx:if="{{showTips2}}">
+	<view class="extension-box">
+		<!-- <view class="guize">
+			活动规则
+		</view> -->
+		<view class="ex-box1">
+			<view class="ex1">
+				<image src="/image/infoicon/tg1.png" />
+			</view>
+			<view class="ex2">
+				<image src="/image/infoicon/tg2.png" />
+				<view>VVIP“邹禧龙”邀请您成为</view>
+			</view>
+			<view class="ex3">
+				<image mode="aspectFill" src="/image/qrcode.png" />
+			</view>
+		</view>
+		<view class="ex-box2">
+			<image src="/image/infoicon/tg3.png" />
+			<view class="ex1">
+				<image mode="aspectFill" src="/image/index1.png" />
+				<view class="m-ex1">
+					<view style="margin-bottom:10rpx">邹禧龙</view>
+					<view>电话：1564649795</view>
+				</view>
+			</view>
+		</view>
+		<!-- <view class="ex-box3">
+			<view class="ex-img" bind:tap="showTips2">
+				<image src="/image/infoicon/tg5.png" />
+				<view>保存图片</view>
+			</view>
+			<view class="ex-img" bind:tap="showTips2">
+				<image src="/image/infoicon/tg4.png" />
+				<view>微信分享</view>
+			</view>
+		</view> -->
+	</view>
+</view>
+
+<!-- 推广结束 -->
+
+
+
+<poster id="poster" hide-loading="{{false}}" preload="{{false}}" config="{{posterConfig}}" bind:success="onPosterSuccess" bind:fail="onPosterFail">
+</poster>

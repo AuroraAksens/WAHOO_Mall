@@ -1,0 +1,70 @@
+page {
+    background-color: white;
+}
+
+
+
+button::after {
+    /* border: none !important;
+    padding: 0 !important;
+    margin: 0 !important; */
+}
+
+button {
+    /* background-color: transparent !important; */
+    /* padding: 0 !important; */
+    /* line-height: inherit !important; */
+    /* margin: 0 !important; */
+    /* width: auto !important; */
+    /* font-weight: 600 !important; */
+    /* border-radius: none !important; */
+}
+
+
+
+
+.text {
+    width: 85%;
+}
+
+.text-box {
+    width: 100%;
+}
+
+.buttom {
+    width: 250rpx;
+    height: 70rpx;
+    background: linear-gradient(180deg, #FF9966 0%, #FFC0A1 32%, #FFC0A1 68%, #FFA982 100%);
+    color: white;
+    font-size: 30rpx;
+    text-align: center;
+    line-height: 70rpx;
+    position: absolute;
+    bottom: 50rpx;
+    right: 50rpx;
+}
+
+.img>image {
+    width: 270rpx;
+    height: 300rpx;
+}
+
+.imageArr {
+    width: 210rpx;
+    height: 210rpx;
+    position: relative;
+}
+
+.delete {
+    width: 30rpx;
+    height: 30rpx;
+    position: absolute;
+    top: 20rpx;
+    right: 5rpx;
+    z-index: 50;
+}
+
+.delete>image {
+    width: 30rpx;
+    height: 30rpx;
+}

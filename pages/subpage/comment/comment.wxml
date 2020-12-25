@@ -1,0 +1,28 @@
+<cu-custom bgColor="bg-white" isBack="{{true}}">
+	<view slot="content">评论</view>
+</cu-custom>
+
+
+
+<form catchsubmit="postText">
+	<view class="text py-30 mx-30">
+		<textarea class="text-box" bindblur="bindTextAreaBlur" name="text" auto-height placeholder="请填写评论" maxlength="140"></textarea>
+	</view>
+
+	<view class="img d-fx jc-start flex-w pl-30">
+		<block wx:for="{{arrImg}}" wx:key="index">
+			<view class="imageArr mr-20">
+				<image bindtap="showImg" data-imgSrc="{{item}}" src="{{item}}" style="width: 210rpx;height: 210rpx;" class="mr-20 mt-20"></image>
+				<view data-index="{{index}}" bindtap="deleteImage" class="delete">
+					<image src="/image/infoicon/deleteimg.png"></image>
+				</view>
+			</view>
+		</block>
+
+		<image bindtap="chooseImg" class="mr-20" src="/image/infoicon/tianjia.png" style="width: 210rpx;height: 210rpx;"></image>
+	</view>
+
+	<button class="buttom bou-20" formType="submit">
+		提交评论
+	</button>
+</form>

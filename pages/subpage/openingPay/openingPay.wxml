@@ -1,0 +1,58 @@
+<cu-custom bgColor="bg-white" isBack="{{true}}">
+	<view slot="content">开通会员</view>
+</cu-custom>
+
+<!-- 顶部卡片 -->
+<view class="pay-top">
+  <image mode="scaleToFill" src="{{memData.member_image}}"></image>
+  <view class="p-toptext">
+    <view class="p-text"><image mode="scaleToFill" src="/image/infoicon/Diamonds.png"></image> {{memData.level}}</view>
+    <view class="bot"></view>
+  </view>
+</view>
+<!-- 顶部卡片结束 -->
+
+
+<!-- 主体 -->
+<view class="pay-body">
+  <view class="p-bodytitle"> <image mode="scaleToFill" src="/image/infoicon/price.png"></image> 价格明细</view>
+  <view class="p-bodybox">
+    <view class="p-box">
+      <view style="color: black"> <image mode="scaleToFill" src="/image/infoicon/member.png"></image> 提货额度 </view>
+      <view>￥{{memData.price}}</view>
+    </view>
+     <view class="p-box" style="margin-top: 40rpx;">
+      <view style="color: black"> <image mode="scaleToFill" src="/image/infoicon/deposit.png"></image> 押金 </view>
+      <view>￥{{memData.bond}}</view>
+    </view>
+  </view>
+  <view class="p-bodybox1"> <image mode="scaleToFill" src="/image/infoicon/hook.png"></image> 我已阅读，开通免责声明</view>
+</view>
+<!-- 主体结束 -->
+
+
+<!-- 底部 -->
+<view class="pay-bottom">
+  <view class="pay-left">
+    <view>应付合计：</view>
+    <view style="font-size: 36rpx;color: #DE8E6A;">￥{{total}}</view>
+  </view>
+  <view class="pay-right" bindtap="openMem">
+    立即开通
+  </view>
+</view>
+<!-- 底部结束 -->
+
+
+<!-- 开通成功 -->
+<view class="Tips2" wx:if="{{showTips2 == true}}">
+	<view class="t2-title">
+		<image src="/image/infoicon/hook2.png"></image>
+		<view>开通成功</view>
+	</view>
+	<view class="t2-body" bindtap="goMine">确定</view>
+</view>
+<!-- 开通成功结束 -->
+
+
+

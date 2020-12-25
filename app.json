@@ -1,0 +1,73 @@
+{
+  "pages": [
+    "pages/navbar/navbar",
+    "pages/index/index",
+    "pages/mine/mine",
+    "pages/Brand/Brand",
+    "pages/Cart/Cart"
+  ],
+
+  "subPackages": [{
+      "root": "pages/subpage/",
+      "pages": [
+        "opening/opening",
+        "member/member",
+        "openingPay/openingPay",
+        "sale/sale",
+        "team/team",
+        "subTeam/subTeam",
+        "orderList/orderList",
+        "comDetails/comDetails",
+        "Notice/Notice",
+        "NoticeDetails/NoticeDetails",
+        "authorization/authorization",
+        "newsDetails/newsDetails",
+        "newsList/newsList",
+        "comment/comment"
+      ]
+    },{
+      "root": "pages/order/",
+      "pages": [
+        "purchase/purchase",
+        "take/take",
+        "takeSub/takeSub"
+      ]
+    },{
+      "root": "pages/warehouse/",
+      "pages": [
+        "house/house",
+        "takeCard/takeCard",
+        "address/address",
+        "listRess/listRess"
+      ]
+    },{
+      "root": "pages/wallet/",
+      "pages": [
+        "mine/mine",
+        "takeMoney/takeMoney",
+        "moneyExamine/moneyExamine",
+        "balance/balance",
+        "addBank/addBank",
+        "listBank/listBank"
+      ]
+    }],
+    
+
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "ColorUI",
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "white"
+  },
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom"
+  },
+
+  "sitemapLocation": "sitemap.json"
+}

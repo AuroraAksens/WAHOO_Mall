@@ -1,0 +1,5 @@
+/* pages/subpage//NoticeDetails/NoticeDetails.wxss */
+.notText{
+    width: 95%;
+    margin: 20rpx auto;
+}

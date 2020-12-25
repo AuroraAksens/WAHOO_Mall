@@ -1,0 +1,12 @@
+<cu-custom bgColor="bg-white" isBack="{{true}}">
+	<view slot="content">新事详情</view>
+</cu-custom>
+
+
+<!-- 详情富文本渲染 -->
+<view class="notText">
+	<!-- <view class="not-title">活动公告详情</view> -->
+	<rich-text nodes="{{newtext}}" class="not-body">
+	</rich-text> 
+</view>
+<!-- 详情富文本渲染结束 -->

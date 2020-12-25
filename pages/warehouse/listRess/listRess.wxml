@@ -1,0 +1,33 @@
+<cu-custom bgColor="bg-white" isBack="{{true}}">
+	<view slot="content">选择收货地址</view>
+</cu-custom>
+
+<!-- 添加收货地址 -->
+<view class="topAdd" bind:tap="goAddress">
+	+ 添加收货地址
+</view>
+<!-- 添加收货地址结束 -->
+
+
+<!-- 地址列表 -->
+<view class="ressList">
+
+    <view class="ressBox" wx:for="{{addList}}" wx:key="index" data-index="{{index}}" bind:tap="cholseRess">
+        <view class="boxleft">
+            <image src="/image/infoicon/listress.png" />
+        </view>
+        <view class="boxcenter">
+            <view class="top">
+                <view class="name">{{item.name}}</view>
+                <view class="phone">{{item.phone}}</view>
+            </view>
+            <view class="bottom">
+                {{item.province}}{{item.city}}{{item.area}}{{item.detailed_address}}
+            </view>
+        </view>
+        <view class="boxright">删除</view>
+    </view>
+
+</view>
+<!-- 地址列表结束 -->
+

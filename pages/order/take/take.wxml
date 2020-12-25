@@ -1,0 +1,71 @@
+<cu-custom bgColor="bg-white" isBack="{{true}}">
+	<view slot="content">提货订单</view>
+</cu-custom>
+
+
+<!-- 顶部导航条 -->
+<scroll-view scroll-x class="banav text-black nav" style="background-color: #FAFAFA;font-weight: bold;">
+	<view class="flex text-center">
+		<view class="cu-item flex-sub {{index==TabCur?'text-greys curs':''}}" wx:for="{{item}}" wx:key="unique" bindtap="tabSelect" data-id="{{index}}">
+			{{item}}
+		</view>
+	</view>
+</scroll-view>
+<!-- 顶部导航条结束 -->
+
+
+
+<view class="index" style="padding-bottom:120rpx">
+
+	<!-- 订单模块 -->
+	<view class="card" wx:if="{{listData.length != 0}}" wx:for="{{listData}}"  wx:for-item="items" wx:key="index">
+		<view class="top">
+			<view wx:if="{{items.status == 0}}" class="left">待发货</view>
+			<view wx:if="{{items.status == 1}}" class="left">已收货</view>
+			<view wx:if="{{items.status == 2}}" class="left">已完成</view>
+			<view wx:if="{{items.status == 3}}" class="left">已取消</view>
+			<view class="right">
+				<view>订单号：{{items.order_number}}</view> 
+			</view>
+		</view>
+
+
+		<!-- <view class="body" wx:for="{{item.product}}" wx:key="index">
+			<image mode="aspectFill" src="{{item.product_image}}" />
+			<view class="b-box">
+				<view style="font-size: 30rpx;font-weight: bold;color: #46291F;">{{item.product_name}}</view>
+				<view style="font-size: 24rpx;font-weight: bold;color: #46291F;opacity: 0.61;">数量:x{{item.number}}</view>
+			</view>
+		</view> -->
+
+
+		<view class="body" wx:for="{{items.product}}" wx:key="index">
+			<image mode="aspectFill" src="{{item.product_image}}" />
+			<view class="b-box">
+				<view style="font-size: 30rpx;font-weight: bold;color: #46291F;padding-bottom: 35rpx;">{{item.product_name}}</view>
+				<view style="font-size: 24rpx;font-weight: bold;color: #46291F;opacity: 0.61;">数量:x{{item.number}}</view>
+				<view class="commbut" wx:if="{{items.status == 2 && item.is_show == true}}" data-prid="{{items.pick_order_id}}" data-productid="{{item.product_id}}" bind:tap="comment">
+					立即评论
+				</view>
+				<view class="commbuts" wx:if="{{items.status == 1 && item.is_show == false}}">
+					您已评论
+				</view>
+				<view wx:if="{{items.status == 1}}" style="font-size: 24rpx;font-weight: bold;color: #46291F;opacity: 0.61;margin-top:30rpx">点击复制快递单号</view>
+			</view>
+		</view>
+
+
+		<view class="bottom">
+			<view wx:if="{{items.status == 1 || items.status == 2}}" class="b-but" data-id="{{items.pick_order_id}}" bind:tap="confirm">确认收货</view>
+			<view wx:if="{{items.status == 1 || items.status == 2}}" bindtap='copyText' data-text="{{items.courier_number}}" class="b-boxnum">快递单号：{{items.courier_number}}</view> 
+		</view>
+	</view>
+	
+	<!-- 订单模块结束 -->
+
+	<view wx:if="{{listData.length == 0}}" class="zhanwu">暂无数据</view>
+
+</view>
+
+
+

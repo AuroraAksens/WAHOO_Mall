@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "index": "/pages/index/index",
+    "Brand": "/pages/Brand/Brand",
+    "Cart": "/pages/Cart/Cart",
+    "mine": "/pages/mine/mine",
+    "poster": "/miniprogram_dist/poster/index"
+  },
+  "enablePullDownRefresh": false
+}

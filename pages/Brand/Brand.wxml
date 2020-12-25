@@ -1,0 +1,22 @@
+<cu-custom bgColor="bg-white">
+	<view slot="content">品牌介绍</view>
+</cu-custom>
+<scroll-view scroll-y="true" style="height:height:calc(100vh - 100rpx);" class="index">
+
+
+	<!-- 导航条 -->
+	<view class="navTop">
+		<view bindtap="navBut" data-id='0' class="{{bottomlight == 0 ? 'navTopBottom' : ''}}">关于我们</view>
+		<view bindtap="navBut" data-id='1' class="{{bottomlight == 1 ? 'navTopBottom' : ''}}">合作品牌</view>
+	</view>
+	<!-- 导航条结束 -->
+
+
+	<!-- 主体 -->
+	<scroll-view class="brandBody" scroll-y="true" style="height:calc(100vh - 160rpx);padding-bottom: 260rpx;">
+		<rich-text nodes="{{ViewData.content}}"></rich-text>
+	</scroll-view>
+	<!-- 主体结束 -->
+
+
+</scroll-view>

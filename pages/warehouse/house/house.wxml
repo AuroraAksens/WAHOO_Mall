@@ -1,0 +1,81 @@
+<cu-custom bgColor="bg-white" isBack="{{true}}">
+	<view slot="content">我的云仓</view>
+</cu-custom>
+
+<!-- 顶部 -->
+<view class="header">
+	<!-- <view class="gro">全部分类</view> -->
+	<view class="search">
+		<input type="text" placeholder="输入搜索关键字" />
+	</view>
+</view>
+<!-- 顶部结束 -->
+
+
+<!-- 主体 -->
+<view class="index" style="padding-bottom:160rpx">
+
+	<!-- 商品模块 -->
+	<view class="conBody" wx:if="{{houseData.length != 0 && itdata.surplus_all != 0}}" wx:for="{{houseData}}" wx:for-item="itdata" wx:for-index="keyindex" wx:key="index">
+		<view class="top-box" data-index="{{keyindex}}" bind:tap="{{takeGoods == 1 ? 'selectsp' : ''}}">
+			<image src="{{itdata.image}}"/>
+			<view class="t-right">
+				<view style="color: #46291F;font-weight: bold;">{{itdata.title}}</view>
+				<view class="tr-box">
+					<view class="trboxText">库存：{{itdata.surplus_all}}</view>
+					<view wx:if="{{itdata.isSelect == true && takeGoods == 1}}" class="cuIcon-triangledownfill lg text-orange trboxTexts"></view>
+					<view wx:if="{{itdata.isSelect == false && takeGoods == 1}}" class="cuIcon-triangleupfill lg text-orange trboxTexts"></view>
+				</view>
+			</view>
+		</view>
+		<block wx:if="{{itdata.isSelect == true}}">
+			<view class="bottom-box" wx:if="{{item.surplus!=0}}" wx:for="{{itdata.cloud_specs}}" wx:key="index" data-index="{{keyindex}}" data-indexs="{{index}}" data-specs="{{item}}" bind:tap="selsp">
+				
+				<view class="selectbox {{item.isSel == true ? 'selbjs' : 'selbj'}}"></view>
+
+				<view class="top-box">
+					规格：{{item.specs.name}}
+				</view>
+				<view class="bot-box">
+					<view>
+						库存:{{item.cloud_stock}}  出货:{{item.cloud_out}}
+					</view>
+					<view class="b-right">
+						可提{{item.surplus}}件
+					</view>
+					<view class="b-number">
+						<image catchtap data-index="{{keyindex}}" data-indexs="{{index}}" bind:tap="reduceNum" src="/image/infoicon/jian.png" />
+						<view>{{item.number}}</view>
+						<image catchtap data-index="{{keyindex}}" data-indexs="{{index}}" data-sur="{{item.surplus}}" bind:tap="addNum" src="/image/infoicon/jia.png" />
+					</view>
+				</view>
+				
+			</view>
+		</block>
+	</view>
+
+	<view class="zhanwu" wx:if="{{houseData.length == 0}}">暂无数据</view>
+	<!-- 商品模块结束 -->
+
+
+	<!-- 底部 -->
+	<view class="bottom-but" wx:if="{{takeGoods == 0}}">
+		<view class="but-box">
+			<view bind:tap="takeGoods">我要提货</view>
+			<view>|</view>
+			<view bind:tap="getGoods">我要进货</view>
+		</view>
+	</view>
+
+
+	<view class="bottom-but" wx:if="{{takeGoods == 1}}">
+		<view class="but-boxs">
+			<view bind:tap="gotakeCard" class="box-right">
+				加入提货购物车
+			</view>
+		</view>
+	</view>
+	<!-- 底部结束 -->
+
+</view>
+<!-- 主体结束 -->

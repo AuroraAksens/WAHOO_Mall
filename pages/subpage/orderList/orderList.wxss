@@ -1,0 +1,142 @@
+page {
+    background-color: #FBF6F6;
+}
+
+/* 搜索框 */
+.search {
+    width: 100%;
+    height: 90rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search>input {
+    width: 690rpx;
+    height: 70rpx;
+    border: 1rpx solid #7070708e;
+    border-radius: 50rpx;
+    text-align: center;
+    padding: 0 30rpx;
+    background-color: white;
+}
+
+
+
+/* 导航条 */
+.navBar {
+    width: 100%;
+    height: 80rpx;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navBar>.nav-box {
+    width: 250rpx;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navBar>.nav-box>.m-nav {
+    width: 50rpx;
+    height: 100%;
+    font-size: 24rpx;
+    text-align: center;
+    font-weight: bold;
+    line-height: 80rpx;
+}
+
+.ac {
+    color: #7F8389;
+}
+
+.act {
+    color: #FFC0A1;
+    border-bottom: 6rpx solid #F2C3A5;
+}
+
+
+
+/* 商品列表 */
+.orderList {
+    width: 95%;
+    margin: 10rpx auto;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding-bottom: 50rpx;
+}
+
+.orderList>.orderBox {
+    width: 335rpx;
+    height: 500rpx;
+    background-color: white;
+    margin-top: 20rpx;
+    margin-left: 10rpx;
+    margin-right: 10rpx;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    border-radius: 10rpx;
+    overflow: hidden;
+}
+
+.orderList>.orderBox>image {
+    width: 100%;
+    height: 330rpx;
+}
+
+.orderList>.orderBox>.b-bottom {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    padding: 20rpx;
+}
+
+.orderList>.orderBox>.b-bottom>view {
+    width: 100%;
+}
+
+.orderList>.orderBox>.b-bottom>.bm1 {
+    color: #46291F;
+    font-size: 26rpx;
+    font-weight: bold;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+}
+
+.orderList>.orderBox>.b-bottom>.bm2 {
+    color: #46291f73;
+    font-size: 22rpx;
+    font-weight: bold;
+    line-height: 55rpx;
+}
+
+.orderList>.orderBox>.b-bottom>.bm3 {
+    color: #DE8E6A;
+    font-size: 22rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+
+/* 暂无数据 */
+.zhanwu {
+    width: 100%;
+    font-size: 28rpx;
+    color: gray;
+    font-weight: bold;
+    line-height: 120rpx;
+    text-align: center;
+}

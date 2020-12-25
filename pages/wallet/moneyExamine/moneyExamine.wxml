@@ -1,0 +1,50 @@
+<cu-custom bgColor="bg-white" isBack="{{true}}">
+	<view slot="content">提现明细</view>
+</cu-custom>
+
+
+
+<!-- 顶部导航 -->
+<view class="h-title">
+	<block wx:for="{{title}}" wx:key="index">
+		<view class="{{sta == item.index ? 'active' : ''}}" data-index="{{item.index}}" bindtap="selectTitle">
+			{{item.name}}
+			<i class="{{sta == item.index ? 'bot' : ''}}"></i>
+		</view>
+	</block>
+</view>
+<!-- 顶部导航 -->
+
+
+<!-- 主体 -->
+<block wx:for="{{taskData}}" wx:key="index">
+	<view class="logBox d-fx jc-center ai-center flex-cl py-20 bou-15">
+
+		<view class="top d-fx jc-end ai-cente pb-20">
+			<view wx:if="{{item.status == 1}}" class="top-box1">审核中</view>
+			<view wx:if="{{item.status == 3}}" class="top-box2">审核失败</view>
+			<view wx:if="{{item.status == 2}}" class="top-box3">审核成功</view>
+		</view>
+
+		<view class="body d-fx jc-center ai-center flex-cl py-20">
+			<view class="pb-20" style="font-size: 30rpx;color: #46291F;">申请提现</view>
+			<view style="font-size: 40rpx;color: #F6A271">+{{item.price}}</view>
+		</view>
+
+		<view class="foot d-fx jc-between px-30 pt-20">
+			<view>申请时间</view>
+			<view style="color:#EB4A42">{{item.create_time}}</view>
+		</view>
+
+		<view class="foot d-fx jc-between px-30 pt-20" wx:if="{{item.status == 3}}">
+			<view>失败原因</view>
+			<view style="color:#EB4A42">{{item.reason}}</view>
+		</view>
+
+	</view>
+</block>
+
+<view class="zhnwu">~暂无更多提现记录~</view>
+<!-- 主体结束 -->
+
+

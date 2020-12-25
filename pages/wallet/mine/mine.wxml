@@ -1,0 +1,75 @@
+<cu-custom bgColor="bg-white" isBack="{{true}}">
+	<view slot="content">我的钱包</view>
+</cu-custom>
+<view class="index">
+
+
+    <!-- 顶部卡片 -->
+    <view class="topCard">
+        <image src="/image/member/top3.png" />
+        <view class="cardBox">
+            <view class="t-box">
+                <view>
+                    <view style="font-size: 32rpx;font-weight: bold;color:#46291F">总收益（元）</view>
+                    <view style="font-size: 46rpx;color:#FCFBFB;margin-top:20rpx">{{wallet.total_price}}</view>
+                </view>
+                <view class="t-box-but" data-bond="{{wallet.balance}}" bind:tap="goTake">提现</view>
+            </view>
+            <view class="t-box">
+                <view>
+                    <view style="font-size: 28rpx;font-weight: bold;color:#46291F">可提现金额（元）</view>
+                    <view style="font-size: 34rpx;color:#FCFBFB;margin-top:20rpx">{{wallet.balance}}</view>
+                </view>
+                <view>
+                    <view style="font-size: 28rpx;font-weight: bold;color:#46291F">保证金(元)</view>
+                    <view style="font-size: 34rpx;color:#FCFBFB;margin-top:20rpx;text-align: center;">{{wallet.bond}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <!-- 顶部卡片结束 -->
+
+    
+    <!-- 钱包选项卡 -->
+    <view class="tab" data-bond="{{wallet.balance}}" bind:tap="goTake">
+        <view class="tc1">
+            <image src="/image/infoicon/minewallet2.png" />
+        </view>
+        <view class="tc2">
+            <view class="m-tc1">可提现金额(元)</view>
+            <view class="m-tc2">钱包的可用余额，可申请提现</view>
+        </view>
+        <view class="tc3">
+             <view class="cuIcon-right lg text-gray"></view>
+        </view>
+    </view>
+
+    <view class="tab" data-stabal="1" data-pay="{{wallet.payment}}" bind:tap="goBalance">
+        <view class="tc1">
+            <image src="/image/infoicon/minewallet1.png" />
+        </view>
+        <view class="tc2">
+            <view class="m-tc1">提货额度(元)</view>
+            <view class="m-tc2">仅可用于补货下单的款项</view>
+        </view>
+        <view class="tc3">
+             <view class="cuIcon-right lg text-gray"></view>
+        </view>
+    </view>
+
+    <view class="tab" bind:tap="goBank">
+        <view class="tc1">
+            <image style="width: 65rpx;height: 65rpx;border-radius: 0rpx;" src="/image/infoicon/bank.png" />
+        </view>
+        <view class="tc2">
+            <view class="m-tc1">银行卡列表</view>
+            <view class="m-tc2">仅用于查看绑定银行卡</view>
+        </view>
+        <view class="tc3">
+             <view class="cuIcon-right lg text-gray"></view>
+        </view>
+    </view>
+    <!-- 钱包选项卡结束 -->
+
+
+</view>

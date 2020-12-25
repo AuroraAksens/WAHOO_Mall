@@ -1,0 +1,17 @@
+<cu-custom bgColor="bg-white" isBack="{{true}}">
+	<view slot="content">新事汇总</view>
+</cu-custom>
+
+
+<!-- 新事汇总 -->
+<view class="notice" wx:if="{{newsData.length != 0}}" wx:for="{{newsData}}" wx:key="index" data-newsid="{{item.news_id}}" bind:tap="gotoDetails">
+    <image src="{{item.image}}" />
+    <view class="no-box">
+        <view class="b1">{{item.title}}</view>
+        <view class="b2">{{item.create_time}}</view>
+    </view>
+</view>
+<!-- 新事汇总结束 -->
+
+
+<view class="zhanwu" wx:if="{{newsData.length == 0}}">暂无数据</view>

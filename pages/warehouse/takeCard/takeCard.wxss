@@ -1,0 +1,374 @@
+/* 添加收货地址 */
+.topAdd {
+    width: 100%;
+    height: 100rpx;
+    background: linear-gradient(90deg, #DE8E6A 0%, #FFC0A1 32%, #FFC0A1 68%, #DE8E6A 100%);
+    text-align: center;
+    line-height: 100rpx;
+    color: #46291F;
+    font-size: 32rpx;
+    font-weight: bold;
+}
+
+
+
+
+/* 购物车商品栏 */
+.bodyCard {
+    width: 100%;
+    margin-top: 20rpx;
+}
+
+.All {
+    width: 36rpx;
+    height: 36rpx;
+    border-radius: 50%;
+    background-color: white;
+    margin-right: 20rpx;
+}
+
+
+
+
+.bodyCard>.body {
+    width: 100%;
+    margin-top: 30rpx;
+}
+
+.bodyCard>.body>.bodyCard {
+    width: 100%;
+    /* height: 185rpx; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 15rpx;
+    overflow: hidden;
+    padding: 20rpx 35rpx 10rpx 35rpx;
+    box-shadow: 0px 10px 11px rgba(178, 175, 175, 0.16);
+}
+
+.bodyCard>.body>.bodyCard>.b1 {
+    width: 10%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bodyCard>.body>.bodyCard>.b2 {
+    width: 75%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.bodyCard>.body>.bodyCard>.b2>image {
+    width: 138rpx;
+    height: 138rpx;
+    border-radius: 20rpx;
+}
+
+.bodyCard>.body>.bodyCard>.b2>.m-b2 {
+    width: 330rpx;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    padding: 0 25rpx 10rpx 15rpx;
+}
+
+.bodyCard>.body>.bodyCard>.b2>.m-b2>.m-b2-s1 {
+    width: 420rpx;
+    font-size: 26rpx;
+    color: #46291F;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.bodyCard>.body>.bodyCard>.b2>.m-b2>.m-b2-s2 {
+    font-size: 22rpx;
+    color: #46291f69;
+    border-radius: 5px;
+    background: #ffc0a13b;
+    margin-top: 16rpx;
+    margin-bottom: 16rpx;
+    padding: 4rpx 20rpx 4rpx 20rpx;
+}
+
+.bodyCard>.body>.bodyCard>.b2>.m-b2>.m-b2-s3 {
+    font-size: 24rpx;
+    color: #DE8E6A;
+}
+
+.bodyCard>.body>.bodyCard>.b3 {
+    width: 15%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 10rpx;
+}
+
+.bodyCard>.body>.bodyCard>.b3>.m-b3 {
+    width: 120rpx;
+    height: 40rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bodyCard>.body>.bodyCard>.b3>.m-b3>.push {
+    width: 36rpx;
+    height: 36rpx;
+    text-align: center;
+    line-height: 36rpx;
+    background-color: #F3F3F3;
+    border-radius: 20rpx;
+}
+
+
+
+/* 底部 */
+.tips {
+    width: 100%;
+    height: 110rpx;
+    font-size: 22rpx;
+    font-weight: bold;
+    padding: 20rpx 80rpx;
+    background: #ffc0a167;
+    color: #46291F;
+    position: fixed;
+    bottom: 110rpx;
+    left: 0;
+}
+.foot {
+    width: 100%;
+    height: 110rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+.foot>.f-left {
+    padding: 40rpx;
+    font-size: 26rpx;
+    font-weight: bold;
+}
+
+.foot>.f-right {
+    width: 225rpx;
+    height: 100%;
+    background: linear-gradient(86deg, #FF9966 0%, #FFC0A1 32%, #FFC0A1 68%, #FFA982 100%);
+    text-align: center;
+    line-height: 110rpx;
+    font-size: 28rpx;
+    font-weight: bold;
+    color: #46291F;
+}
+
+.foot>.f-rights {
+    width: 225rpx;
+    height: 100%;
+    background: rgb(141, 141, 141);
+    text-align: center;
+    line-height: 110rpx;
+    font-size: 28rpx;
+    font-weight: bold;
+    color: white;
+}
+
+
+/* 支付弹框 */
+.payTips {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #707070a4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.payTips>.paybox {
+    width: 540rpx;
+    height: 460rpx;
+    background-color: white;
+    border-radius: 20rpx;
+    padding: 30rpx;
+    position: relative;
+}
+
+.payTips>.paybox>.close{
+    position: absolute;
+    top: 30rpx;
+    left: 30rpx;
+}
+
+.payTips>.paybox>.pb-top {
+    width: 100%;
+    text-align: center;
+    line-height: 40rpx;
+    font-weight: bold;
+    color: #46291F;
+    font-size: 30rpx;
+}
+
+.payTips>.paybox>.pb-body {
+    width: 100%;
+    height: 200rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.payTips>.paybox>.pb-body>.bo1 {
+    font-size: 28rpx;
+    color: #46291F;
+    font-weight: bold;
+}
+
+.payTips>.paybox>.pb-body>.bo2 {
+    font-size: 40rpx;
+    color: #DE8E6A;
+    margin-top: 20rpx;
+    font-weight: bold;
+}
+
+.payTips>.paybox>.pb-bottom {
+    width: 100%;
+    height: 160rpx;
+    padding-top: 20rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.payTips>.paybox>.pb-bottom>.bo3 {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1rpx solid #de8f6a7a;
+    padding: 20rpx;
+    font-size: 22rpx;
+}
+
+.payTips>.paybox>.pb-bottom>.bo4 {
+    width: 280rpx;
+    height: 60rpx;
+    text-align: center;
+    line-height: 60rpx;
+    font-size: 26rpx;
+    border-radius: 20rpx;
+    margin-top: 20rpx;
+    background: linear-gradient(90deg, #FF9966 0%, #FFC0A1 32%, #FFC0A1 68%, #FFA982 100%);
+}
+
+.payTips>.paybox>.paymen{
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    padding-top: 40rpx;
+}
+
+.payTips>.paybox>.paymen>.pay-box{
+    width: 100%;
+    height: 80rpx;
+    line-height: 80rpx;
+    border-top: 1rpx solid #46291f56;
+    font-size: 24rpx;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.payTips>.paybox>.payBut{
+    width: 280rpx;
+    height: 60rpx;
+    text-align: center;
+    line-height: 60rpx;
+    font-size: 26rpx;
+    border-radius: 20rpx;
+    margin: 20rpx auto;
+    background: linear-gradient(90deg, #FF9966 0%, #FFC0A1 32%, #FFC0A1 68%, #FFA982 100%);
+}
+
+
+
+/* 地址列表 */
+.ressList{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20rpx;
+    border-bottom: 1rpx solid rgba(220, 220, 220, 0.747);
+}
+
+.ressList>.ressBox{
+    width: 90%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin: 30rpx 0;
+}
+
+.ressList>.ressBox>.boxleft{
+    width: 15%;
+}
+
+.ressList>.ressBox>.boxleft>image{
+    width: 75rpx;
+    height: 75rpx;
+}
+
+.ressList>.ressBox>.boxcenter{
+    width: 70%;
+}
+
+.ressList>.ressBox>.boxcenter>.top{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.ressList>.ressBox>.boxcenter>.top>.name{
+    font-size: 28rpx;
+    color: #030303;
+    font-weight: bold;
+}
+
+.ressList>.ressBox>.boxcenter>.top>.phone{
+    margin-left: 20rpx;
+    font-size: 24rpx;
+    color: gray;
+}
+
+.ressList>.ressBox>.boxcenter>.bottom{
+    font-size: 24rpx;
+    color: rgb(75, 75, 75);
+    padding-top: 10rpx;
+}
+
+.ressList>.ressBox>.boxright{
+    width: 15%;
+    height: 75rpx;
+    text-align: end;
+    line-height: 75rpx;
+    color: black;
+    font-size: 26rpx;
+    font-weight: bold;
+}

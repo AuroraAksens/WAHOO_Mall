@@ -1,0 +1,223 @@
+.text-cor {
+    color: #FFC0A1;
+}
+
+
+
+/* 问题反馈 */
+.problem {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.377);
+}
+
+.problem>.problem-box {
+    width: 410rpx;
+    height: 435rpx;
+    border-radius: 15rpx;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.problem>.problem-box>image {
+    width: 320rpx;
+    height: 290rpx;
+    border-radius: 20rpx;
+}
+
+.problem>.problem-box>.p-text {
+    width: 300rpx;
+    height: 60rpx;
+    margin-top: 20rpx;
+    font-size: 22rpx;
+    color: #46291F;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+.problem>.problem-gb {
+    width: 410rpx;
+    height: 80rpx;
+    border-radius: 10rpx;
+    text-align: center;
+    line-height: 80rpx;
+    font-size: 30rpx;
+    color: #46291F;
+    margin-top: 20rpx;
+    font-weight: bold;
+    background: linear-gradient(90deg, #FF9966 0%, #FFC0A1 33%, #FFC0A1 68%, #FFA982 100%);
+}
+
+
+
+
+/* 推广 */
+.extension{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+.extension-box {
+    width: 90%;
+    height: 850rpx;
+    position: relative;
+    background-color: #FAD8C7;
+}
+
+.extension-box>.guize {
+    width: 60rpx;
+    height: 75rpx;
+    background: #DE8E6A;
+    border-radius: 0px 0px 30px 30px;
+    font-size: 18rpx;
+    color: white;
+    position: absolute;
+    top: 0;
+    right: 60rpx;
+    text-align: center;
+    padding: 5rpx;
+}
+
+.extension-box>.ex-box1{
+    width: 340rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 160rpx auto 100rpx auto;
+}
+
+.extension-box>.ex-box1>.ex1>image{
+    width: 200rpx;
+    height: 35rpx;
+}
+
+.extension-box>.ex-box1>.ex2{
+    width: 100%;
+    height: 60rpx;
+    margin-top: 40rpx;
+    position: relative;
+}
+
+.extension-box>.ex-box1>.ex2>image{
+    width: 335rpx;
+    height: 60rpx;
+}
+
+.extension-box>.ex-box1>.ex2>view{
+    width: 100%;
+    height: 100%;
+    font-size: 22rpx;
+    color: #46291F;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    line-height: 50rpx;
+    font-weight: bold;
+}
+
+.extension-box>.ex-box1>.ex3{
+    margin-top: 40rpx;
+}
+
+.extension-box>.ex-box1>.ex3>image{
+    width: 210rpx;
+    height: 210rpx;
+}
+
+.extension-box>.ex-box2{
+    width: 630rpx;
+    height: 160rpx;
+    margin: auto;
+    border-radius: 10rpx;
+    overflow: hidden;
+    position: relative;
+}
+
+.extension-box>.ex-box2>image{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.extension-box>.ex-box2>.ex1{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 10rpx 30rpx;
+}
+
+.extension-box>.ex-box2>.ex1>image{
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50%;
+}
+
+.extension-box>.ex-box2>.ex1>.m-ex1{
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    margin-left: 20rpx;
+    color: #FAD8C7;
+    font-size: 24rpx;
+}
+
+.extension-box>.ex-box3{
+    width: 100%;
+    height: 165rpx;
+    background-color: #FFC0A1;
+    margin: 20rpx auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.extension-box>.ex-box3>.ex-img{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 22rpx;
+    font-weight: bold;
+}
+
+.extension-box>.ex-box3>.ex-img>view{
+    margin-top: 10rpx;
+}
+
+.extension-box>.ex-box3>.ex-img>image{
+    width: 90rpx;
+    height: 90rpx;
+}

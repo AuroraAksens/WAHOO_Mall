@@ -1,0 +1,118 @@
+
+/* 顶部导航 */
+.h-title {
+    width: 95%;
+    height: 70rpx;
+    background-color: white;
+    color: #FFA982;
+    line-height: 70rpx;
+    font-size: 28rpx;
+    margin: 20rpx auto;
+    border-radius: 40rpx;
+    border: 1rpx solid #FFA982;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+  
+  .h-title>view {
+    width: 33%;
+    height: 70rpx;
+    text-align: center;
+  }
+  
+  .active {
+    width: 33%;
+    height: 100%;
+    line-height: 70rpx;
+    text-align: center;
+    border-radius: 40rpx;
+    background: #FFA982;
+    color: white;
+    position: relative;
+  }
+
+
+  
+/* 主体 */
+.logBox {
+    width: 90%;
+    margin: 40rpx;
+    background: #FFFFFF;
+    box-shadow: 0px 5px 20px rgba(195, 114, 57, 0.11);
+    border: 1px solid #f7f7f7;
+  }
+  
+  .logBox>.top {
+    width: 90%;
+    border-bottom: 1rpx solid #7070702c;
+  }
+  
+  /* 审核中 */
+  .logBox>.top>.top-box1 {
+    font-size: 24rpx;
+    width: 140rpx;
+    height: 50rpx;
+    border-radius: 30rpx;
+    color: #FEF6F2;
+    text-align: center;
+    line-height: 50rpx;
+    background: #F6A271;
+  }
+  
+  /* 审核失败 */
+  .logBox>.top>.top-box2 {
+    font-size: 24rpx;
+    width: 140rpx;
+    height: 50rpx;
+    border-radius: 30rpx;
+    color: #FEF6F2;
+    text-align: center;
+    line-height: 50rpx;
+    background-color: gray;
+  }
+  
+  /* 审核成功 */
+  .logBox>.top>.top-box3 {
+    font-size: 24rpx;
+    width: 140rpx;
+    height: 50rpx;
+    border-radius: 30rpx;
+    color: #FEF6F2;
+    text-align: center;
+    line-height: 50rpx;
+    background: #F6A271;
+  }
+  
+  /* 已提现 */
+  .logBox>.top>.top-box4 {
+    font-size: 24rpx;
+    width: 140rpx;
+    height: 50rpx;
+    border-radius: 30rpx;
+    color: #FEF6F2;
+    text-align: center;
+    line-height: 50rpx;
+  background: #FF5669;
+  }
+  
+  .logBox>.body {
+    width: 90%;
+    border-bottom: 1rpx solid #7070702c;
+  }
+  
+  .logBox>.foot {
+    width: 90%;
+    font-size: 30rpx;
+    color: #7B7B7B;
+  }
+  
+  .zhnwu{
+    width: 100vw;
+    height: 60rpx;
+    text-align: center;
+    line-height: 60rpx;
+    color: #FFA982;
+    font-size: 24rpx;
+  }
+  

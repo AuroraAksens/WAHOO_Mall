@@ -1,0 +1,11 @@
+<cu-custom bgColor="bg-white" isBack="{{true}}">
+	<view slot="content">我的授权</view>
+</cu-custom>
+
+
+
+<!-- 授权内容 -->
+<view class="aut">
+	<rich-text nodes="{{textlist}}"></rich-text>
+</view>
+<!-- 授权内容结束 -->

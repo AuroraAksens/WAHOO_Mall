@@ -1,0 +1,158 @@
+/* pages/wallet//takeMoney/takeMoney.wxss */
+page {
+    background: linear-gradient(360deg, #DE8E6A 0%, #FFC0A1 33%, #FFC0A1 68%, #DE8E6A 100%);
+}
+
+/* 顶部卡片 */
+.topCard {
+    width: 100%;
+    height: 220rpx;
+    border-radius: 20rpx;
+    background-color: white;
+    position: relative;
+    margin-top: 30rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.topCard>.min-card {
+    width: 180rpx;
+    height: 50rpx;
+    border-radius: 30rpx 0 0 30rpx;
+    background: linear-gradient(180deg, #FF9966 0%, #FFC0A1 33%, #FFC0A1 68%, #FFA982 100%);
+    padding: 0 10rpx;
+    text-align: center;
+    font-size: 22rpx;
+    position: absolute;
+    top: 20rpx;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.topCard>.min-card>image{
+    width: 25rpx;
+    height: 25rpx;
+    margin-right: 15rpx;
+}
+
+.topCard>.text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
+
+/* 主体卡片 */
+.bodyCard{
+    width: 100%;
+    background-color: white;
+    border-radius: 20rpx;
+    margin-top: 30rpx;
+    padding: 40rpx;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.bodyCard>.topTake{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1rpx solid #70707050;
+    padding-bottom: 20rpx;
+    font-weight: bold;
+    font-size: 26rpx;
+    margin-top: 20rpx;
+}
+
+.bodyCard>.bodyTake{
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+}
+
+.bodyCard>.bodyTake>.bt1{
+    width: 100%;
+    font-size: 28rpx;
+    font-weight: bold;
+    color: #46291F;
+    padding: 40rpx 0;
+}
+
+.bodyCard>.bodyTake>.bt2{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 34rpx;
+    padding-bottom: 15rpx;
+    border-bottom: 1rpx solid #7070703d;
+}
+
+.bodyCard>.bodyTake>.bt2>input{
+    width: 460rpx;
+}
+
+.bodyCard>.bodyTake>.bt2>view{
+    text-align: center;
+    padding: 10rpx;
+    color: #C37239;
+    font-size: 26rpx;
+    font-weight: bold;
+}
+
+.bodyCard>.bodyTake>.bt3{
+    width: 100%;
+    color: #46291f54;
+    font-size: 22rpx;
+    padding: 20rpx 0;
+}
+
+.bodyCard>.goTake{
+    width: 400rpx;
+    height: 80rpx;
+    background-color: #46291F;
+    color: white;
+    border-radius: 45rpx;
+    text-align: center;
+    line-height: 80rpx;
+    margin: 40rpx 0 0 30rpx;
+    font-weight: bold;
+}
+
+
+
+/* 底部说明 */
+.foot-box{
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 40rpx;
+}
+
+
+.foot-box>.ftb1{
+    color: #46291F;
+    font-weight: bold;
+    margin-bottom: 20rpx;
+    font-size: 30rpx;
+}
+
+.foot-box>.ftb2{
+    color: #46291F;
+    font-weight: bold;
+    font-size: 24rpx;
+}

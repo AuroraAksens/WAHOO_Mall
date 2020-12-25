@@ -1,0 +1,14 @@
+<cu-custom bgColor="bg-white" isBack="{{true}}">
+	<view slot="content">活动公告</view>
+</cu-custom>
+
+
+<!-- 活动公告 -->
+<view class="notice" wx:for="{{noticedata}}" wx:key="index" data-actid="{{item.activity_id}}" bind:tap="gotoDetails">
+    <image src="{{item.image}}" />
+    <view class="no-box">
+        <view class="b1">{{item.title}}</view>
+        <view class="b2">{{item.create_time}}</view>
+    </view>
+</view>
+<!-- 活动公告结束 -->

@@ -1,0 +1,138 @@
+/* pages/subpage/opening/opening.wxss */
+page {
+  background-color: #FEF6F2;
+}
+
+.open {
+  width: 90%;
+  margin: 60rpx auto;
+}
+
+.open>.topImg {
+  width: 160rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: auto;
+}
+
+.open>.topImg>.m-ti {
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+}
+
+.open>.topImg>.m-ti>image {
+  width: 160rpx;
+  height: 160rpx;
+}
+
+.open>.topImg>.text {
+  font-size: 32rpx;
+  color: #46291F;
+  margin-top: 20rpx;
+}
+
+.o-box {
+  width: 100%;
+  margin: 30rpx auto;
+  background-color: white;
+  border-radius: 50rpx;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 20rpx 30rpx;
+  font-size: 26rpx;
+  box-shadow: 0px 10px 20px rgba(193, 191, 191, 0.16);
+}
+
+.o-box>.name{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.o-box>.name>image {
+  width: 20rpx;
+  height: 25rpx;
+  margin-right: 15rpx;
+}
+
+.op-box {
+  width: 100%;
+  margin: 30rpx auto;
+}
+
+.op-box>.op-top {
+  color: #46291F;
+  font-size: 24rpx;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.op-box>.op-top>image {
+  width: 30rpx;
+  height: 25rpx;
+  margin-right: 10rpx;
+}
+
+
+
+.op-box>.op-body {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.op-box>.op-bottom {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  font-size: 22rpx;
+}
+
+.op-box>.op-body>.op-box {
+  width: 320rpx;
+  height: 190rpx;
+  border-radius: 20rpx;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.op-box>.op-body>.op-box>image {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.op-box>.op-body>.op-box>.op-Image{
+  width: 100%;
+  height: 100%;
+}
+
+.o-but {
+  width: 100%;
+  height: 70rpx;
+  text-align: center;
+  line-height: 70rpx;
+  border-radius: 40rpx;
+  background: linear-gradient(90deg, #DE8E6A 0%, #FFC0A1 33%, #FFC0A1 68%, #DE8E6A 100%);
+  margin: 20rpx auto;
+}
+
+.cenText{
+  width: 100%;
+  margin: 60rpx auto;
+  text-align: center;
+  color: #C37239;
+  font-weight: bold;
+}

@@ -1,0 +1,52 @@
+<cu-custom bgColor="bg-white" isBack="{{true}}">
+	<view slot="content">我的团队</view>
+</cu-custom>
+
+<image class="topBJ" src="/image/infoicon/subTeam.png" />
+
+<!-- 顶部名片 -->
+<view class="topCard">
+    <view class="tc1">
+        <view>{{listData[0].create_time}}</view>
+        <view><image style="width:35rpx;height:30rpx" src="/image/infoicon/date.png" /></view>
+    </view>
+    
+    <view class="tc2">
+        <image src="{{id.image}}" />
+        <view class="t-name">
+            <view class="name1">{{id.name}}</view>
+            <view class="name2">{{id.member}}</view>
+        </view>
+        <view class="t-moy">
+            <view class="moy1">本月总消费(元)</view>
+            <view class="moy2">￥{{price}}</view>
+        </view>
+    </view>
+</view>
+<!-- 顶部名片结束 -->
+
+
+<!-- 主体 -->
+<view class="moy-body" wx:if="{{listData.length != 0}}" wx:for="{{listData}}" wx:key="index">
+    <view class="m-box">
+        <view class="leftText">代理产品名称</view>
+        <view class="rightText" style="color: #46291F;font-size: 26rpx;">{{item.product_name}}</view>
+    </view>
+    <view class="m-box">
+        <view class="leftText">消费金额（元）</view>
+        <view class="rightText" style="color: #DE8E6A;font-size: 26rpx;">￥{{item.product_price}}</view>
+    </view>
+    <view class="m-box">
+        <view class="leftText">消费日期</view>
+        <view class="rightText" style="color: #C4C4C4;font-size: 26rpx;">{{item.create_time}}</view>
+    </view>
+    <view class="m-box">
+        <view class="leftText">数量</view>
+        <view class="rightText" style="color: #DE8E6A;font-size: 26rpx;">X{{item.product_number}}</view>
+    </view>
+</view>
+<!-- 主体结束 -->
+
+
+
+<view wx:if="{{listData.length == 0}}" class="zahnwu">暂无数据</view> 

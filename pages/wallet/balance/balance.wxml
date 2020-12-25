@@ -1,0 +1,73 @@
+<cu-custom wx:if="{{staBal == 0}}" bgColor="bg-white" isBack="{{true}}">
+  <view slot="content">现金余额</view>
+</cu-custom>
+
+
+<cu-custom wx:if="{{staBal == 1}}" bgColor="bg-white" isBack="{{true}}">
+  <view slot="content">提货额度</view>
+</cu-custom>
+
+
+
+<!-- 余额 -->
+<view class="topBal">
+  <view class="top-box">
+    <view style="font-size: 30rpx;font-weight: bold;color:#DE8E6A">￥{{pay}}</view>
+    <view style="font-size: 22rpx;font-weight: bold;color:#46291F;margin-top:6rpx">获取余额</view>
+  </view>
+  <view class="bottom-box" bindtap="showModal" data-target="Modal">充值</view>
+</view>
+<!-- 余额结束 -->
+
+
+
+<!-- 余额明细 -->
+<view class="detailed">
+  <view class="det-title">
+    <view bind:tap="sleAct" data-select="2" class="{{select == 2 ? 'act' : ''}}">全部明细</view>
+    <view bind:tap="sleAct" data-select="0" class="{{select == 0 ? 'act' : ''}}">充值明细</view>
+    <view bind:tap="sleAct" data-select="1" class="{{select == 1 ? 'act' : ''}}">支出明细</view>
+  </view>
+  <view class="index">
+    <view class="det-body" wx:if="{{balanList.length != 0}}" wx:for="{{balanList}}" wx:key="index">
+      <view class="body-left">
+        <view wx:if="{{item.is_type == 0}}" style="font-size: 30rpx;font-weight: bold;color:#46291F">
+          充值
+        </view>
+        <view wx:if="{{item.is_type == 1}}" style="font-size: 30rpx;font-weight: bold;color:#46291F">
+          支出
+        </view>
+        <view style="font-size: 22rpx;font-weight: bold;color:#CACACA;margin-top:15rpx">
+          {{item.create_time}}
+        </view>
+      </view>
+      <view wx:if="{{item.is_type == 0}}" class="body-right">+{{item.price}}</view>
+      <view wx:if="{{item.is_type == 1}}" class="body-right">-{{item.price}}</view>
+    </view>
+  </view>
+</view>
+<!-- 余额明细结束 -->
+
+  <view wx:if="{{balanList.length == 0}}" class="zhanwu">暂无数据</view>
+
+
+
+
+<!-- 充值弹框 -->
+<view class="cu-modal {{modalName=='Modal'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">充值</view>
+      <view class="action" bindtap="hideModal">
+        <text class="cuIcon-close text-red"></text>
+      </view>
+    </view>
+    <view class="padding-xl">
+      <view class="recharge">
+        <input type="number" bindinput="getPrice" focus="{{inpsta}}" placeholder="请输入需要充值的金额" />
+        <view class="rechargeBut" bind:tap="postPrice">充值</view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 充值弹框结束 -->

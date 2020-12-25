@@ -1,0 +1,57 @@
+<cu-custom bgColor="bg-white">
+	<view slot="content">购物车</view>
+</cu-custom>
+<scroll-view scroll-y="true" style="height:calc(100vh - 100rpx)">
+
+	<!-- 购物车商品栏 -->
+	<view class="bodyCard">
+		<view class="title">
+			<view bind:tap="getAllChoi"><view class="All"><image wx:if="{{staCart == 1}}" src="/image/infoicon/select.png" /></view>全选</view>
+			<view wx:if="{{edit == 0}}" bind:tap="changEdit">编辑</view>
+			<view wx:if="{{edit == 1}}" bind:tap="changDelete">删除</view>
+		</view>
+		
+		<view class="body">
+			
+			<view class="bodyCard" wx:if="{{listData.length != 0}}" wx:for="{{listData}}" wx:key="index" data-pea="{{item.price}}" data-id="{{index}}" bind:tap="selectedBox">
+				<view class="b1">
+					<view class="All"><image wx:if="{{item.select == true}}" src="/image/infoicon/select.png" /></view>
+				</view>
+				<view class="b2">
+					<image src="{{item.image}}" mode="aspectFill" />
+					<view class="m-b2">
+						<view class="m-b2-s1">{{item.title}}</view>
+						<view class="m-b2-s2">{{item.specs_name}}</view>
+						<view class="m-b2-s3">￥{{item.price}}</view>
+					</view>
+				</view>
+				<view class="b3">
+					<view class="m-b3">
+						<view class="push" catchtap data-id="{{item.id}}" bind:tap="outNum">-</view>
+						<view>{{item.num}}</view>
+						<view class="push" catchtap data-id="{{item.id}}" bind:tap="addNum">+</view>
+					</view>
+				</view>
+			</view>
+
+			<view wx:if="{{listData.length == 0}}" class="boCazw">购物车暂无商品</view>
+
+		</view>
+	</view>
+	<!-- 购物车商品栏结束 -->
+
+
+	<!-- 底部结算 -->
+	<view class="bottomCart">
+		<view class="tips">根据会员等级，可享受相应的折扣价，可在确认订单时查看实际需要支付的金额</view>
+		<view class="body">
+			<view class="left">
+				<view style="font-weight: bold;">合计：</view>
+				<view style="color:#DE8E6A">￥{{totalPrice}}</view>
+			</view>
+			<view class="right" bindtap="goMinCart">去结算({{count}})</view>
+		</view>
+	</view>
+	<!-- 底部结算结束 -->
+
+</scroll-view>

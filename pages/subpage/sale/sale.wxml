@@ -1,0 +1,66 @@
+<cu-custom bgColor="bg-white" isBack="{{true}}">
+	<view slot="content">我的销售</view>
+</cu-custom>
+
+<!-- 顶部卡片 -->
+<view class="top">
+    <view class="top1">
+        <view class="top1-left">
+            <view style="font-size: 24rpx;">销售额(元)</view>
+            <view style="font-size: 42rpx;margin-top:20rpx">{{price}}</view>
+        </view>
+        <view class="top1-right">
+            <picker mode="date" value="{{date}}" fields="month" start="2020-10" end="2021-10" bindchange="bindDateChange">
+                <view class="picker">
+                  选择日期: {{date}}
+                </view>
+            </picker>
+        </view>
+    </view>
+
+    <view class="top2">
+        <view class="t-box">
+            <view>利润</view>
+            <view style="margin-top:25rpx">{{profit}}</view>
+        </view>
+        <view class="xian"></view>
+        <view class="t-box">
+            <view>奖金</view>
+            <view style="margin-top:25rpx">0.00</view>
+        </view>
+        <view class="xian"></view>
+        <view class="t-box">
+            <view>销售折扣</view>
+            <view style="margin-top:25rpx">{{rebate}}折</view>
+        </view>
+    </view>
+</view>
+<!-- 顶部卡片结束 -->
+
+
+
+<!-- 主体部分 -->
+<view class="saleBody">
+    <view class="body-top">
+        销售总额: {{price}}
+    </view>
+
+    <view class="body-box" wx:if="{{listdata.length != 0}}" wx:for="{{listdata}}" wx:key="index">
+        <image src="{{item.product_image}}" />
+        <view class="box1">
+            <view style="font-size: 24rpx;color: #252525;font-weight: bold;">{{item.product_name}}</view>
+            <view style="font-size: 24rpx;color: #46291F;line-height: 25px;">价格: <i style="font-size: 24rpx;color: #DE8E6A;"> {{item.product_price}}</i></view>
+            <view style="font-size: 24rpx;color: #46291F;">数量: <i style="font-size: 24rpx;color: #DE8E6A;">{{item.product_number}}</i></view>
+        </view>
+        <!-- <view class="box2 cuIcon-right lg text-gray">
+        </view> -->
+    </view>
+
+
+     <view wx:if="{{listdata.length == 0}}" class="zhanwu">暂无数据</view>
+</view>
+<!-- 主体部分结束 -->
+
+
+
+

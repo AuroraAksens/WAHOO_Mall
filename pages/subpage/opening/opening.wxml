@@ -1,0 +1,65 @@
+<cu-custom bgColor="bg-white" isBack="{{true}}">
+	<view slot="content">开通会员</view>
+</cu-custom>
+
+<view class="open">
+
+	<view class="topImg">
+		<view class="m-ti">
+			<image mode="scaleToFill" src="/image/member/agent.png"></image>
+		</view>
+		<view class="text">申请代理</view>
+	</view>
+
+	<view class="o-box">
+		<view class="name">
+			<image mode="scaleToFill" src="/image/infoicon/name.png"></image>
+			<view>姓名：</view>
+		</view>
+		<input style="width: 430rpx;margin-left: 20rpx;" bindinput="getName" type="text" placeholder="请输入姓名"></input>
+	</view>
+
+
+	<view class="o-box">
+		<view class="name">
+			<image mode="scaleToFill" src="/image/infoicon/phone.png"></image>手机号：
+		</view>
+		<input style="width: 430rpx;" type="text" bindinput="getPhone" placeholder="请输入手机号"></input>
+	</view>
+
+	<view class="op-box">
+		<view class="op-top">
+			<image mode="scaleToFill" src="/image/infoicon/ID.png"></image>身份信息
+		</view>
+		<view class="op-body">
+			<view class="op-box" bindtap="{{resImage.length == 0 ? 'choImage' : ''}}">
+				<image mode="scaleToFill" wx:if="{{resImage.length == 0}}" src="/image/infoicon/addIMG.png"></image>
+				<image class="op-Image" bindtap="perImage" data-perImage="{{resImage[0]}}" wx:if="{{resImage.length != 0}}" mode="scaleToFill" src="{{resImage}}"></image>
+			</view>
+			<view class="op-box" bindtap="{{resImage2.length == 0 ? 'choImage2' : ''}}">
+				<image mode="scaleToFill" wx:if="{{resImage2.length == 0}}" src="/image/infoicon/addIMG.png"></image>
+				<image class="op-Image" bindtap="perImage2" data-perImage="{{resImage2[0]}}" wx:if="{{resImage2.length != 0}}" mode="scaleToFill" src="{{resImage2}}"></image>
+			</view>
+		</view>
+		<view class="op-bottom">
+			<view>身份证人像面</view>
+			<view>身份证国徽面</view>
+		</view>
+	</view>
+
+	<view class="o-box">
+		<view class="name">
+			<image mode="scaleToFill" src="/image/infoicon/phone.png"></image>身份证号：
+		</view>
+		<input style="width: 430rpx;" type="text" bindinput="getID" placeholder="请输入身份证号"></input>
+	</view>
+
+	
+
+	<view class="o-but" bindtap="postData">
+		确定
+	</view>
+
+	<view class="cenText">个人资料将由本小程序使用</view>
+
+</view>

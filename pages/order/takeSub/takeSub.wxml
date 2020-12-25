@@ -1,0 +1,53 @@
+<cu-custom bgColor="bg-white" isBack="{{true}}">
+	<view slot="content">下级订单</view>
+</cu-custom>
+
+
+
+
+<!-- 顶部导航条 -->
+<scroll-view scroll-x class="banav text-black nav" style="background-color: #FAFAFA;font-weight: bold;">
+	<view class="flex text-center">
+		<view class="cu-item flex-sub {{index==TabCur?'text-greys curs':''}}" wx:for="{{item}}" wx:key="unique" bindtap="tabSelect" data-id="{{index}}">
+			{{item}}
+		</view>
+	</view>
+</scroll-view>
+<!-- 顶部导航条结束 -->
+
+
+
+<view class="index" style="padding-bottom:120rpx">
+
+	<!-- 订单模块 -->
+	<view class="card" wx:if="{{listData.length != 0}}" wx:for="{{listData}}" wx:key="index">
+		<view class="top">
+			<view wx:if="{{item.status == 0}}" class="left">待付款</view>
+			<view wx:if="{{item.status == 1}}" class="left">已完成</view>
+			<view wx:if="{{item.status == 2}}" class="left">已取消</view>
+			<view class="right">订单号：{{item.order_number}}</view>
+		</view>
+		<view class="body" wx:for="{{item.product_snapshot}}" wx:key="index">
+			<image mode="aspectFill" src="{{item.product_image}}" />
+			<view class="b-box">
+				<view style="font-size: 30rpx;font-weight: bold;color: #46291F;">{{item.product_name}}</view>
+				<!-- <view style="font-size: 24rpx;font-weight: bold;color: #46291F;opacity: 0.61;">{{item.product_name}}</view> -->
+				<view style="font-size: 24rpx;font-weight: bold;color: #DE8E6A">￥{{item.product_price}}</view>
+				<view style="font-size: 24rpx;font-weight: bold;color: #46291F;opacity: 0.61;">数量:x{{item.number}}</view>
+			</view>
+		</view>
+		<view class="bottom">
+			<view class="b-ti">
+				<view style="font-size: 26rpx;font-weight: bold;color: #46291F;opacity: 0.8;margin-right:50rpx">合计：{{item.after_price}}</view>
+			</view>
+			<view class="b-user">
+				<image src="{{item.avatar_image}}" />
+				<view class="name">{{item.nickname}}</view>
+			</view>
+		</view>
+	</view>
+	<!-- 订单模块结束 -->
+
+	<view wx:if="{{listData.length == 0}}" class="zhanwu">暂无数据</view>
+
+</view>

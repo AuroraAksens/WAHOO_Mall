@@ -1,0 +1,159 @@
+<cu-custom bgColor="bg-white" isBack="{{true}}">
+    <view slot="content">商品详情</view>
+</cu-custom>
+<view class="index" style="padding-bottom: 120rpx;">
+
+
+    <!-- 顶部商品详情 -->
+    <view class="topCard">
+        <view class="swiper">
+            <image mode="aspectFill" class="swiper-img" src="{{ViewData.details_image}}" />
+        </view>
+        <view class="cardMsg">
+            <view class="c-box1">{{ViewData.title}}</view>
+            <view class="c-box2">{{ViewData.account}}</view>
+            <view class="c-box3">
+                <view style="color: #DE8E6A">￥{{ViewData.price}}</view>
+                <view style="color: #03030348">库存{{ViewData.specs[0].stock}}件</view>
+            </view>
+        </view>
+    </view>
+    <!-- 顶部商品详情结束 -->
+
+
+    <!-- 主体详情 -->
+    <view class="bodyCard">
+        <view class="b-title">
+            <view class="bt1"></view>
+            <view class="bt2">商品详情</view>
+            <view class="bt3">Peoduct Details</view>
+        </view>
+        <view class="b-body">
+            <rich-text nodes="{{ViewData.content}}"></rich-text>
+        </view>
+    </view>
+    <!-- 主体详情结束 -->
+
+
+    <!-- 评论模块 -->
+    <view class="comment">
+        <view class="com-title">
+            <view class="c-left">
+                <view class="cl1"></view>
+                <view class="cl2">评论</view>
+            </view>
+            <view class="c-right" bindtap="seeAll">查看全部</view>
+        </view>
+
+        <view class="com-body" wx:for="{{ViewData.com}}" wx:for-item="items" wx:key="index"  wx:if="{{index < 2 && ViewData.com.length != 0 && plAll == 0}}">
+            <view class="cb-top">
+                <view class="ct1">
+                    <image mode="aspectFill" src="{{items.user.avatar_image}}" />
+                </view>
+                <view class="ct2">
+                    <view>{{items.user.nickname}}</view>
+                    <view style="line-height: 30rpx;font-size: 20rpx;color:#979797;opacity: 0.49;margin-top:20rpx">
+                        {{items.user.create_time}}
+                    </view>
+                </view>
+            </view>
+            <view class="cb-bottom">
+                <block wx:for="{{items.images}}" wx:key="index">
+                    <image mode="aspectFill" bind:tap="showImage" data-images="{{items.images}}" data-image="{{item}}" src="{{item}}" />
+                </block>
+                <view>{{items.content}}</view>
+            </view>
+        </view>
+
+        <view class="com-body" wx:for="{{ViewData.com}}" wx:for-item="items" wx:key="index"  wx:if="{{ViewData.com.length != 0 && plAll == 1}}">
+            <view class="cb-top">
+                <view class="ct1">
+                    <image mode="aspectFill" src="{{items.user.avatar_image}}" />
+                </view>
+                <view class="ct2">
+                    <view>{{items.user.nickname}}</view>
+                    <view style="line-height: 30rpx;font-size: 20rpx;color:#979797;opacity: 0.49;margin-top:20rpx">
+                        {{items.user.create_time}}
+                    </view>
+                </view>
+            </view>
+            <view class="cb-bottom">
+                <block wx:for="{{items.images}}" wx:key="index">
+                    <image mode="aspectFill" bind:tap="showImage" data-images="{{items.images}}" data-image="{{item}}" src="{{item}}" />
+                </block>
+                <view>{{items.content}}</view>
+            </view>
+        </view>
+
+        <view class="zhanwu" wx:if="{{ViewData.com.length == 0}}">暂无评论数据</view>
+    </view>
+    <!-- 评论模块结束 -->
+
+
+</view>
+
+
+
+<!-- 底部购买框 -->
+<view class="bottom">
+    <view class="bottomLeft">
+        <view class="bl-box" bind:tap="goHome">
+            <image mode="aspectFit" src="/image/infoicon/Gohome.png" />
+        </view>
+        <view class="xian"></view>
+        <view class="bl-box" bind:tap="goCart">
+            <image mode="aspectFit" src="/image/infoicon/paycart.png" />
+        </view>
+        <view class="xian"></view>
+        <button open-type="share" class="bl-box">
+            <image src="/image/infoicon/shr.png" />
+        </button>
+    </view>
+    <view class="bottomRight">
+        <view class="br-box2" bind:tap="showChoice">加入购物车</view>
+    </view>
+</view>
+<!-- 底部购买框结束 -->
+
+
+
+<!-- 选择规格 -->
+<view class="choice" wx:if="{{choice == 1}}" bind:tap="showChoice">
+    <view class="choice-box" catchtap>
+        <view class="swiper">
+            <image mode="scaleToFill" class="swiper-img" src="{{ViewData.details_image}}" />
+        </view> 
+
+        <view class="box1">
+            <view class="m1-box1">{{specification.name}}</view>
+            <view class="m1-box2">{{specification.specs_present}}</view>
+            <view class="m1-box3">
+                <view style="color:#DE8E6A;font-size: 24rpx;">￥{{specification.specs_price}}</view>
+                <view style="color:#03030334;font-size: 20rpx;">库存{{specification.stock}}件</view>
+            </view>
+        </view>
+
+        <view class="box2">
+            <view class="m2-box1">选择规格：</view>
+            <view class="m2-box2">
+                <view class="{{selGui == item.specs_id ? 'box2' : 'box'}}" wx:for="{{ViewData.specs}}" wx:key="index" data-id="{{item.specs_id}}" bind:tap="selGui">{{item.name}}</view>
+            </view>
+        </view>
+
+        <view class="box3">
+            <view class="m3-box1">
+                <view class="box1">购买数量：</view>
+                <view class="box2">
+                    <view bind:tap="spcNum">-</view>
+                    {{num}}
+                    <view data-number="{{specification.stock}}" bind:tap="addNum">+</view>
+                </view>
+            </view>
+            <view class="m3-box2" data-productid="{{ViewData.product_id}}" bind:tap="addCart">
+                加入购物车
+            </view>
+        </view>
+
+    </view>
+</view>
+<!-- 选择规格结束 -->

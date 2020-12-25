@@ -1,0 +1,103 @@
+<cu-custom bgColor="bg-white" isBack="{{true}}">
+	<view slot="content">会员中心</view>
+</cu-custom>
+
+<scroll-view scroll-y="true" style="height: 90vh">
+
+<!-- 顶部轮播 -->
+<swiper class="card-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" indicator-color="#8799a3" indicator-active-color="#8f8f8f">
+	<swiper-item wx:for="{{memData}}" wx:key="index" class="{{cardCur==index?'cur':''}}">
+		<view class="swiper-item">
+			<image src="{{item.member_image}}" mode="aspectFill"></image>
+			<video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video>
+			<view class="title">
+				<view class="top">
+					<image src="/image/infoicon/Diamonds.png"></image> {{item.level}}
+				</view>
+				<view class="bottom"></view>
+			</view>
+			<view wx:if="{{item.member_id >= memid && cardCur != 0}}" data-memberid="{{item.member_id}}" class="but" bindtap="showTips">开通</view>
+			<view wx:if="{{item.member_id <= memid}}" class="buts" bindtap="showTips2">开通</view>
+		</view> 
+	</swiper-item>
+</swiper>
+<!-- 顶部轮播结束 -->
+
+
+
+<!-- 主体 -->
+<view class="memberBody">
+	<view class="m-title">
+		<image mode="aspectFill" src="/image/member/m-body.png"></image>
+		会员权益
+	</view>
+	<view class="m-body">
+
+		<view class="m-box" wx:if="{{cardCur == 0}}" wx:for="{{memData[0].power}}" wx:key="index">
+			<view class="top">
+				<image mode="aspectFill" src="{{item.image}}"></image>
+			</view>
+			<view class="bottom">
+				{{item.title}}
+			</view>
+		</view>
+
+		<view class="m-box" wx:if="{{cardCur == 1}}" wx:for="{{memData[1].power}}" wx:key="index">
+			<view class="top">
+				<image mode="aspectFill" src="{{item.image}}"></image>
+			</view>
+			<view class="bottom">
+				{{item.title}}
+			</view>
+		</view>
+
+		<view class="m-box" wx:if="{{cardCur == 2}}" wx:for="{{memData[2].power}}" wx:key="index">
+			<view class="top">
+				<image mode="aspectFill" src="{{item.image}}"></image>
+			</view>
+			<view class="bottom">
+				{{item.title}}
+			</view>
+		</view>
+
+		<view class="m-box" wx:if="{{cardCur == 3}}" wx:for="{{memData[3].power}}" wx:key="index">
+			<view class="top">
+				<image mode="aspectFill" src="{{item.image}}"></image>
+			</view>
+			<view class="bottom">
+				{{item.title}}
+			</view>
+		</view>
+
+	</view>
+
+</view>
+<!-- 主体结束 -->
+<view class="padBot"></view>
+</scroll-view>
+
+
+
+
+<!-- 免责声明 -->
+<view class="Tips" wx:if="{{showTips == true}}">
+	<view class="t-box">
+		<view class="t-top">
+			开通免责声明
+		</view>
+		<view class="t-body">
+			<view> 一、本人开通会员，一切权力补救1阿瑟东阿三京东阿
+				阿松大说法萨芬撒打算</view>
+			<view> 一、本人开通会员，一切权力补救1阿瑟东阿三京东阿
+				阿松大说法萨芬撒打算</view>
+			<view> 一、本人开通会员，一切权力补救1阿瑟东阿三京东阿
+				阿松大说法萨芬撒打算</view>
+		</view>
+		<view class="t-bottom" bindtap="goOpen">
+			知道了
+		</view>
+	</view>
+</view>
+<!-- 免责声明结束 -->
+
+

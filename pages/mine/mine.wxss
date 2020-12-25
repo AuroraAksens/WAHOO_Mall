@@ -1,0 +1,295 @@
+/* 去除But样式 */
+button::after {
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+button {
+  background-color: transparent !important;
+  margin: 0 !important;
+  font-weight: 500 !important;
+  border-radius: none !important;
+}
+
+
+
+/* 置顶背景 */
+.topImg {
+  width: 100vw;
+  height: 305rpx;
+  position: absolute;
+  top: 1;
+  left: 0;
+  z-index: -1;
+}
+
+.topImg>image {
+  width: 100%;
+  height: 100%;
+}
+
+
+/* 登录框 */
+.login {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 30rpx;
+}
+
+.login>.logLeft {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.login>.logLeft>.tou>image {
+  width: 110rpx;
+  height: 110rpx;
+  border-radius: 50%;
+}
+
+.login>.logLeft>.name {
+  display: flex;
+  justify-content: start;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-left: 30rpx;
+  color: #46291F;
+  padding-top: 6rpx;
+}
+
+.login>.logLeft>.name>view>.name-box {
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-top: 15rpx;
+}
+
+.login>.logLeft>.name>view {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.login>.logLeft>.name>view>.name-image {
+  width: 110rpx;
+  height: 50rpx;
+  margin-left: 20rpx;
+}
+
+.login>.logLeft>.name>view>.name-image>image {
+  width: 110rpx;
+  height: 50rpx;
+}
+
+.login>.logRight>.loginBut {
+  font-size: 22rpx;
+  padding: 3rpx 30rpx;
+  height: 60rpx;
+  border-radius: 30rpx;
+  text-align: center;
+  font-weight: bold;
+  color: #46291F;
+  background: linear-gradient(90deg, #FF9966 0%, #FFC0A1 32%, #FFC0A1 68%, #FFA982 100%);
+}
+
+.login>.logRight>.loginButs {
+  font-size: 24rpx;
+  width: 120rpx;
+  height: 60rpx;
+  border-radius: 30rpx;
+  line-height: 60rpx;
+  text-align: center;
+  font-weight: bold;
+  color: #46291F;
+  background: linear-gradient(90deg, #FF9966 0%, #FFC0A1 32%, #FFC0A1 68%, #FFA982 100%);
+}
+
+
+/* 个人信息框 */
+.mineMes {
+  width: 100%;
+  height: 195rpx;
+  border-radius: 10rpx;
+  background-color: #F4D9C8;
+  margin-top: 30rpx;
+  display: flex;
+  flex-direction: column;
+  border: 1rpx solid #C37239;
+}
+
+.mineMes>.topCard {
+  width: 100%;
+  padding: 20rpx 30rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  font-size: 26rpx;
+  color: #46291F;
+}
+
+
+.mineMes>.mesXian {
+  width: 100%;
+  height: 0rpx;
+  border: 1rpx solid #E79C79;
+}
+
+.mineMes>.bottomCard {
+  width: 100%;
+  padding: 20rpx;
+  font-size: 24rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.mineMes>.bottomCard>.leftCard {
+  text-align: center;
+}
+
+.mineMes>.bottomCard>.cardXian {
+  width: 0;
+  height: 60rpx;
+  border: 2rpx solid #e79c7981;
+}
+
+.mineMes>.bottomCard>.rightCard {
+  text-align: center;
+}
+
+
+
+/* list */
+.list {
+  width: 100%;
+  border-radius: 20rpx;
+  box-shadow: 0px 10px 20px rgba(154, 154, 154, 0.16);
+  margin-top: 30rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  z-index: 100;
+}
+
+.list>.listTitle {
+  width: 100%;
+  padding: 30rpx 0rpx 10rpx 20rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #46291F;
+}
+
+.list>.listBody {
+  width: 100%;
+  /* padding: 10rpx 10rpx; */
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-left: 6rpx;
+}
+
+.list>.listBody>.b-box {
+  height: 100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #46291F;
+  margin: 28rpx;
+}
+
+.list>.listBody>.b-box>image {
+  width: 60rpx;
+  height: 60rpx;
+  color: #46291F;
+}
+
+.list>.listBody>.b-box>view {
+  margin-top: 15rpx;
+  font-size: 20rpx;
+}
+
+
+.list>.superiorBody {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.list>.superiorBody>.superiorImg{
+  width: 80rpx;
+  height: 80rpx;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.list>.superiorBody>.superior {
+  width: 100%;
+  height: 160rpx;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 20rpx 40rpx;
+}
+
+.list>.superiorBody>.xian{
+  width: 1rpx;
+  height: 70rpx;
+  background-color: #E79C79;
+  opacity: 0.5;
+}
+
+.list>.superiorBody>.superior>image {
+  width: 110rpx;
+  height: 110rpx;
+  border-radius: 100rpx;
+}
+
+.list>.superiorBody>.superior>.supBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  margin-left: 20rpx;
+}
+
+.list>.superiorBody>.superior>.supBox>.name {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  font-size: 24rpx;
+  font-weight: bold;
+  margin-bottom: 5rpx;
+}
+
+.list>.superiorBody>.superior>.supBox>.name>.nvip {
+  width: 80rpx;
+  height: 25rpx;
+  font-size: 16rpx;
+  background: linear-gradient(270deg, #FF9966 0%, #FFC0A1 32%, #FFC0A1 68%, #FFA982 100%);
+  border-radius: 10rpx;
+  text-align: center;
+  line-height: 25rpx;
+  margin-left: 15rpx;
+}
+
+.list>.superiorBody>.superior>.supBox>.vip {
+  width: 90rpx;
+  height: 35rpx;
+  border-radius: 15rpx;
+  text-align: center;
+  line-height: 35rpx;
+  background: #46291F;
+  color: #FFC0A1;
+  font-size: 20rpx;
+  margin-top: 10rpx;
+}

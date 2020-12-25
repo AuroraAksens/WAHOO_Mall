@@ -1,0 +1,177 @@
+<cu-custom wx:if="{{staId == 0}}" bgColor="bg-white" isBack="{{true}}">
+	<view slot="content">提货购物车</view>
+</cu-custom>
+
+<cu-custom wx:if="{{staId == 1}}" bgColor="bg-white" isBack="{{true}}">
+	<view slot="content">结算购物车</view>
+</cu-custom>
+
+
+<!-- 添加收货地址 -->
+<view wx:if="{{staId == 0 && addList.length == 0}}" class="topAdd" bind:tap="goAddGoods">
+	+ 添加收货地址
+</view>
+<!-- 添加收货地址结束 -->
+
+
+<!-- 选择地址 -->
+<view class="ressList"  wx:if="{{staId == 0 && addList.length != 0}}">
+	<view class="ressBox" bind:tap="goListress">
+	    <view class="boxleft">
+	        <image src="/image/infoicon/listress.png" />
+	    </view>
+	    <view class="boxcenter">
+	        <view class="top">
+	            <view class="name">{{addList.name}}</view>
+	            <view class="phone">{{addList.phone}}</view>
+	        </view>
+	        <view class="bottom">
+	            {{addList.province}}{{addList.city}}{{addList.area}}{{addList.detailed_address}}
+	        </view>
+	    </view>
+	    <view class="boxright">选择</view>
+	</view>
+</view>
+<!-- 选择地址结束 -->
+
+
+
+<!-- 结算购物车 -->
+<block wx:if="{{staId == 1}}">
+<view class="index">
+
+
+<!-- 购物车商品栏 -->
+	<view class="bodyCard">
+		<view class="body">
+			
+			<view class="bodyCard" wx:for="{{listData}}" wx:key="index">
+				<view class="b2">
+					<image src="/image/index1.png" mode="aspectFill" />
+					<view class="m-b2">
+						<view class="m-b2-s1">{{item.title}}</view>
+						<view class="m-b2-s2">{{item.specs_name}}</view>
+						<view class="m-b2-s3">￥{{item.price}}</view>
+					</view>
+				</view>
+				<view class="b3">
+					<view class="m-b3">
+						<view>X{{item.num}}</view>
+					</view>
+				</view>
+			</view>
+
+		</view>
+	</view>
+<!-- 购物车商品栏结束 -->
+</view>
+
+
+	<!-- 底部 -->
+	<view wx:if="{{member == 0 }}" class="tips">根据会员等级，可享受相应的折扣价，可在确认订单时查看实际需要支付的金额</view>
+	<view wx:if="{{member == 1 }}" class="tips">您当前会员为“会员”等级，享受折扣为 9折</view>
+	<view wx:if="{{member == 2 }}" class="tips">您当前会员为“VIP”等级，享受折扣为 8折</view>
+	<view wx:if="{{member == 3 }}" class="tips">您当前会员为“VVIP”等级，享受折扣为 7折</view>
+	<view wx:if="{{member == 4 }}" class="tips">您当前会员为“WVIP”等级，享受折扣为 5折</view>
+	<view class="foot">
+		<view class="f-left">合计：{{listData.length}}件</view>
+		<view class="f-left">总价：{{totalPrice}}</view>
+		<view class="f-right" wx:if="{{staId == 1}}" bindtap="takeHWs">确认</view>
+		<!-- <view class="f-rights" wx:if="{{staId == 1 && totalPrice < 500}}">确认</view> -->
+	</view>
+	<!-- 底部结束 -->
+
+</block>
+<!-- 结算购物车结束 -->
+
+
+
+
+
+
+
+<!-- 提货购物车 -->
+<block wx:if="{{staId == 0}}">
+<view class="index">
+
+
+<!-- 购物车商品栏 -->
+	<view class="bodyCard">
+		<view class="body">
+			
+			<view class="bodyCard" wx:for="{{listDatas}}" wx:key="index">
+				<view class="b2">
+					<image src="{{item.product_image}}" mode="aspectFill" />
+					<view class="m-b2">
+						<view class="m-b2-s1">{{item.specs.name}}</view>
+						<view class="m-b2-s2">{{item.specs.specs_present}}</view>
+					</view>
+				</view>
+				<view class="b3">
+					<view class="m-b3">
+						<view>X{{item.number}}</view>
+					</view>
+				</view>
+			</view>
+
+		</view>
+	</view>
+<!-- 购物车商品栏结束 -->
+</view>
+
+
+	<!-- 底部 -->
+	<view class="foot">
+		<view class="f-left">合计：{{listDatas.length}}件</view>
+		<view class="f-right" wx:if="{{staId == 0}}" bindtap="takeHW">确认</view>
+	</view>
+	<!-- 底部结束 -->
+
+</block>
+<!-- 提货购物车结束 -->
+
+
+
+
+
+
+
+
+<!-- 支付弹框 -->
+<view class="payTips" wx:if="{{paytips == true}}">
+
+	<view class="paybox" wx:if="{{paytips2 == 0}}">
+		<view class="cuIcon-close lg text-gray close" bind:tap="close"></view>
+		<view class="pb-top">
+			<view>支付</view>
+		</view>
+		<view class="pb-body">
+			<view class="bo1">支付货款</view>
+			<view class="bo2">￥{{totalPrice}}</view>
+		</view>
+		<view class="pb-bottom">
+			<view class="bo3">
+				<view>支付方式</view>
+				<view wx:if="{{payclose ==0}}" bind:tap="choice" style="font-weight: bold;color: #46291F;">提货额度支付 ></view>
+				<view wx:if="{{payclose ==1}}" bind:tap="choice" style="font-weight: bold;color: #46291F;">余额支付 ></view>
+				<view wx:if="{{payclose ==2}}" bind:tap="choice" style="font-weight: bold;color: #46291F;">微信支付 ></view>
+			</view>
+			<view class="bo4" bind:tap="payMoney">确定支付</view>
+		</view>
+	</view>
+
+	<view class="paybox" wx:if="{{paytips2 == 1}}">
+		<view class="cuIcon-close lg text-gray close" bind:tap="close"></view>
+		<view class="pb-top">
+			<view>选择支付方式</view>
+		</view>
+		<view class="paymen">
+			<view bind:tap="closeBox" data-id="0" class="pay-box" style="border-top:none"><view>提货额度(剩余￥{{payment}})</view><view wx:if="{{payclose == 0}}" class="cuIcon-check lg text-gray"></view></view>
+			<view bind:tap="closeBox" data-id="1" class="pay-box"><view>余额(剩余￥{{balance}})</view> <view wx:if="{{payclose == 1}}" class="cuIcon-check lg text-gray"></view></view>
+			<view bind:tap="closeBox" data-id="2" class="pay-box"><view>微信支付</view><view wx:if="{{payclose == 2}}" class="cuIcon-check lg text-gray"></view></view>
+		</view>
+		<view class="payBut" bind:tap="choice">确定</view>
+	</view>
+
+</view>
+<!-- 支付弹框结束 -->

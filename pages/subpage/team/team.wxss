@@ -1,0 +1,105 @@
+page {
+    background-color: #F5F4F4;
+}
+
+/* 顶部导航 */
+.topBar {
+    width: 100%;
+    height: 90rpx;
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1rpx solid #F5F4F4;
+}
+
+
+/* 主体 */
+.teamBody {
+    width: 95%;
+    background-color: white;
+    border-radius: 15rpx;
+    margin: 20rpx auto;
+}
+
+.teamBody>.t-title {
+    width: 95%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 30rpx;
+    border-bottom: 1rpx solid #E5E5E5;
+    margin: auto;
+}
+
+.teamBody>.t-title>image {
+    width: 35rpx;
+    height: 35rpx;
+}
+
+.teamBody>.t-title>view {
+    margin-left: 10rpx;
+    font-size: 28rpx;
+    font-weight: bold;
+    color: #46291F;
+}
+
+.teamBody>.t-body {
+    width: 95%;
+    margin: auto;
+    padding-bottom: 30rpx;
+}
+
+.teamBody>.t-body>.tb-box {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 30rpx;
+    position: relative;
+    margin-top: 30rpx;
+    border-bottom: 1rpx solid #E5E5E5;
+}
+
+.teamBody>.t-body>.tb-box>image {
+    width: 150rpx;
+    height: 150rpx;
+    border-radius: 15rpx;
+}
+
+.teamBody>.t-body>.tb-box>.box1 {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.teamBody>.t-body>.tb-box>.box1>.m-box1 {
+    color: #46291F;
+    font-weight: bold;
+    margin-left: 30rpx;
+}
+
+.teamBody>.t-body>.tb-box>.box2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30rpx;
+    position: absolute;
+    right: 20rpx;
+    color: #DE8E6A;
+}
+
+
+.act{
+    color: #DE8E6A;
+}
+
+
+.zahnwu{
+    width: 100%;
+    text-align: center;
+    font-size: 30rpx;
+    color: gray;
+    line-height: 100rpx;
+    margin-top: 20rpx;
+}

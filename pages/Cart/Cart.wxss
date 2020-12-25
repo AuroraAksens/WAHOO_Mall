@@ -1,0 +1,220 @@
+/* 购物车商品栏 */
+.bodyCard {
+    width: 90%;
+    margin: auto;
+    margin-top: 20rpx;
+    padding-bottom: 410rpx;
+}
+
+.bodyCard>.title {
+    width: 100%;
+    height: 70rpx;
+    border-radius: 15rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFD4BF;
+    padding: 20rpx 35rpx 20rpx 35rpx;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+}
+
+.bodyCard>.title>view {
+    font-size: 32rpx;
+    font-weight: bold;
+    color: #46291F;
+    display: flex;
+    align-items: center;
+}
+
+.All {
+    width: 36rpx;
+    height: 36rpx;
+    border-radius: 50%;
+    background-color: white;
+    margin-right: 20rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border: 1rpx solid rgb(160, 160, 160);
+}
+.All>image{
+    width: 100%;
+    height: 100%;    
+}
+
+.Alls{
+    width: 36rpx;
+    height: 36rpx;
+    border-radius: 50%;
+    background-color: rgb(126, 255, 165);
+    margin-right: 20rpx;
+}
+
+
+
+
+.bodyCard>.body {
+    width: 100%;
+    margin-top: 30rpx;
+}
+
+.bodyCard>.body>.bodyCard {
+    width: 100%;
+    /* height: 185rpx; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 15rpx;
+    overflow: hidden;
+    padding: 10rpx 35rpx 10rpx 35rpx;
+    box-shadow: 0px 10px 11px rgba(178, 175, 175, 0.16);
+}
+
+.bodyCard>.body>.bodyCard>.b1 {
+    width: 10%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bodyCard>.body>.bodyCard>.b2 {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.bodyCard>.body>.bodyCard>.b2>image {
+    width: 138rpx;
+    height: 138rpx;
+    border-radius: 20rpx;
+}
+
+.bodyCard>.body>.bodyCard>.b2>.m-b2 {
+    width: 300rpx;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    padding: 0 25rpx 10rpx 15rpx;
+}
+
+.bodyCard>.body>.bodyCard>.b2>.m-b2>.m-b2-s1 {
+    width: 330rpx;
+    font-size: 26rpx;
+    color: #46291F;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.bodyCard>.body>.bodyCard>.b2>.m-b2>.m-b2-s2 {
+    font-size: 20rpx;
+    color: #46291f69;
+    border-radius: 5px;
+    background: #ffc0a13b;
+    margin-top: 12rpx;
+    margin-bottom: 12rpx;
+    padding: 4rpx 20rpx 4rpx 20rpx;
+}
+
+.bodyCard>.body>.bodyCard>.b2>.m-b2>.m-b2-s3 {
+    font-size: 24rpx;
+    color: #DE8E6A;
+}
+
+.bodyCard>.body>.bodyCard>.b3 {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 10rpx;
+}
+
+.bodyCard>.body>.bodyCard>.b3>.m-b3 {
+    width: 260rpx;
+    height: 40rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.bodyCard>.body>.bodyCard>.b3>.m-b3>.push {
+    width: 40rpx;
+    height: 40rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F3F3F3;
+    border-radius: 30rpx;
+    font-size: 40rpx;
+}
+
+.boCazw{
+    width: 100%;
+    text-align: center;
+    line-height: 60rpx;
+    font-size: 28rpx;
+    font-weight: bold;
+    color: gray;
+    margin: 20rpx auto;
+}
+
+
+
+/* 底部结算 */
+.bottomCart {
+    width: 100vw;
+    height: 200rpx;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    z-index: 1000;
+}
+
+.bottomCart>.tips {
+    width: 100%;
+    height: 50%;
+    font-size: 20rpx;
+    font-weight: bold;
+    padding: 20rpx 80rpx;
+    background: #ffc0a167;
+    color: #46291F;
+}
+
+.bottomCart>.body {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bottomCart>.body>.left {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-left: 30rpx;
+}
+
+.bottomCart>.body>.right {
+    width: 225rpx;
+    height: 100%;
+    text-align: center;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 26rpx;
+    background: linear-gradient(86deg, #FF9966 0%, #FFC0A1 32%, #FFC0A1 68%, #FFA982 100%);
+}

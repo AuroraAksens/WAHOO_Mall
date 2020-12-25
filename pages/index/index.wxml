@@ -1,0 +1,91 @@
+<cu-custom bgColor="bg-white">
+	<view slot="content">首页</view>
+</cu-custom>
+<scroll-view scroll-y="true" style="height:calc(100vh - 100rpx)" class="index">
+
+
+	<!-- 搜索框 -->
+	<view class="search" bind:tap="goOrderList">
+		输入搜索产品
+	</view>
+	<!-- 搜索框结束 -->
+
+
+	<!-- 轮播图 -->
+	<view class="banner">
+		<swiper class="swiper" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+			<block wx:for="{{listData.banner}}" wx:key="index">
+				<swiper-item>
+					<image mode="aspectFit" class="swiImg" src="{{item.image}}"></image>
+				</swiper-item>
+			</block>
+		</swiper>
+	</view>
+	<!-- 轮播图结束 -->
+
+
+	<!-- 商城 -->
+	<view class="Mall">
+		<view class="boxTitle">
+			<view style="font-size: 32rpx;font-weight: bold;margin-right:30rpx">商城</view>
+			<view style="font-size: 24rpx;">STORE</view>
+			<view class="more" bind:tap="goMore">more ></view>
+		</view>
+
+		<view class="mallbody">
+			<view class="body-box" wx:for="{{listData.category}}" wx:key="index" data-id="{{item.category_id}}" bind:tap="goOrderLists">
+				<image mode="scaleToFill" src="{{item.imageCate}}"></image>
+				<!-- <view class="m-box">
+					<view class="box">{{item.name}}</view>
+				</view> -->
+			</view>
+		</view>
+	</view>
+	<!-- 商城结束 -->
+
+
+	<!-- 新事 -->
+	<view class="fresh">
+		<view class="boxTitle">
+			<view style="font-size: 32rpx;font-weight: bold;margin-right:30rpx">新事</view>
+			<view style="font-size: 24rpx;">NEWS</view>
+			<view class="more" bind:tap="goNewsMore">more ></view>
+		</view>
+
+		<view class="freshbody">
+			<view class="f-box" wx:for="{{listData.news}}" wx:key="index" wx:if="{{index<1}}" data-id="{{item.news_id}}" bind:tap="goNewsDetails">
+				<image src="{{item.image}}"></image>
+				<view class="bottomTitle">
+					<view style="font-size: 28rpx;color: #46291F;">{{item.title}}</view>
+					<view style="font-size: 22rpx;color: #030303;opacity: 0.6;line-height: 40rpx;">{{item.create_time}}</view>
+					<view style="font-size: 22rpx;color: #030303;opacity: 0.6;">{{item.message}}</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<!-- 新事结束 -->
+
+
+	<!-- 上新产品 -->
+	<view class="newsProduct">
+		<view class="boxTitle">
+			<view style="font-size: 32rpx;font-weight: bold;margin-right:30rpx">上新产品</view>
+			<view style="font-size: 24rpx;">NEW PRODUCTS</view>
+		</view>
+
+		<view class="newsbody">
+			<view class="nbbox" wx:for="{{listData.newProduct}}" wx:key="index" data-id="{{item.product_id}}"  bind:tap="gotoDetails">
+				<image src="{{item.image}}"></image>
+				<view class="m-nbox">
+					<view style="width: 180rpx;font-size: 20rpx;color: #46291F;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">{{item.title}}</view>
+					<view style="font-size: 18rpx;color: #46291F;opacity: 0.5;line-height: 30rpx;">{{item.account}}</view>
+					<view style="font-size: 18rpx;color: #DE8E6A;">￥{{item.price}}</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<!-- 上新产品结束 -->
+
+
+
+</scroll-view>

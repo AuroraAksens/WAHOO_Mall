@@ -1,0 +1,77 @@
+/* 添加收货地址 */
+.topAdd {
+    width: 100%;
+    height: 100rpx;
+    background: linear-gradient(90deg, #DE8E6A 0%, #FFC0A1 32%, #FFC0A1 68%, #DE8E6A 100%);
+    text-align: center;
+    line-height: 100rpx;
+    color: #46291F;
+    font-size: 32rpx;
+    font-weight: bold;
+}
+
+
+/* 地址列表 */
+.ressList{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20rpx;
+}
+
+.ressList>.ressBox{
+    width: 90%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin: 30rpx 0;
+}
+
+.ressList>.ressBox>.boxleft{
+    width: 15%;
+}
+
+.ressList>.ressBox>.boxleft>image{
+    width: 75rpx;
+    height: 75rpx;
+}
+
+.ressList>.ressBox>.boxcenter{
+    width: 70%;
+}
+
+.ressList>.ressBox>.boxcenter>.top{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.ressList>.ressBox>.boxcenter>.top>.name{
+    font-size: 28rpx;
+    color: #030303;
+    font-weight: bold;
+}
+
+.ressList>.ressBox>.boxcenter>.top>.phone{
+    margin-left: 20rpx;
+    font-size: 24rpx;
+    color: gray;
+}
+
+.ressList>.ressBox>.boxcenter>.bottom{
+    font-size: 24rpx;
+    color: rgb(75, 75, 75);
+    padding-top: 10rpx;
+}
+
+.ressList>.ressBox>.boxright{
+    width: 15%;
+    height: 75rpx;
+    text-align: end;
+    line-height: 75rpx;
+    color: black;
+    font-size: 26rpx;
+    font-weight: bold;
+}

@@ -1,0 +1,169 @@
+/* pages/subpage/openingPay/openingPay.wxss */
+.pay-top {
+  width: 85%;
+  margin: 20rpx auto;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.pay-top>image {
+  width: 600rpx;
+  height: 350rpx;
+}
+
+.pay-top>.p-toptext {
+  position: absolute;
+  top: 30rpx;
+  left: 20rpx;
+}
+
+.pay-top>.p-toptext>.p-text {
+  color: white;
+  padding-left: 30rpx;
+  padding-bottom: 10rpx;
+}
+
+.pay-top>.p-toptext>.p-text>image {
+  width: 25rpx;
+  height: 20rpx;
+}
+
+.pay-top>.p-toptext>.bot {
+  width: 220rpx;
+  height: 10rpx;
+  border-radius: 0 20rpx 20rpx 0;
+  background-color: white;
+  opacity: 0.5;
+}
+
+.pay-body {
+  width: 85%;
+  margin: 60rpx auto;
+}
+
+.pay-body>.p-bodytitle {
+  width: 100%;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+.pay-body>.p-bodytitle>image {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.pay-body>.p-bodybox {
+  width: 100%;
+  background-color: white;
+  border-radius: 20rpx;
+  margin-top: 30rpx;
+  padding: 40rpx;
+  color: #DE8E6A;
+}
+
+.pay-body>.p-bodybox>.p-box {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pay-body>.p-bodybox>.p-box>view>image {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.pay-body>.p-bodybox1 {
+  width: 100%;
+  background-color: white;
+  border-radius: 20rpx;
+  margin-top: 30rpx;
+  padding: 20rpx;
+  color: #DE8E6A;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pay-body>.p-bodybox1>image {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 20rpx;
+}
+
+.pay-bottom {
+  width: 90%;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 60rpx;
+  margin: auto;
+  border-radius: 50rpx;
+  box-shadow: 0px 3px 6px rgba(191, 191, 191, 0.16);
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.pay-bottom>.pay-left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 28rpx;
+  padding-left: 40rpx;
+}
+
+.pay-bottom>.pay-right {
+  width: 230rpx;
+  height: 100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(90deg, #DE8E6A 0%, #FFC0A1 33%, #FFC0A1 60%, #FFC0A1 68%, #DE8E6A 100%);
+}
+
+
+
+/* 开通成功 */
+.Tips2 {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  background-color: white;
+  z-index: 9999;
+}
+.Tips2>.t2-title{
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  top: 350rpx;
+  left: 0;
+  right: 0;
+  margin: auto;
+  font-size: 40rpx;
+}
+.Tips2>.t2-title>image{
+  width: 246rpx;
+  height: 246rpx;
+}
+.Tips2>.t2-body{
+  width: 90%;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  color: white;
+  background-color: #16c4af;
+  position: absolute;
+  top: 800rpx;
+  left: 0;
+  right: 0;
+  margin: auto;
+  font-size: 40rpx;
+  border-radius: 20rpx;
+}

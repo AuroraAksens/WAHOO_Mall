@@ -1,0 +1,115 @@
+page{
+    background-color: #F5F5F5;
+}
+
+/* 余额 */
+.topBal {
+    width: 100%;
+    height: 230rpx;
+    background-color: white;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 20rpx;
+}
+
+.topBal>.top-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.topBal>.bottom-box {
+    width: 460rpx;
+    height: 60rpx;
+    background: linear-gradient(84deg, #FF9966 0%, #FFC0A1 32%, #FFC0A1 68%, #FFA982 100%);
+    border-radius: 30rpx;
+    text-align: center;
+    line-height: 60rpx;
+    font-size: 24rpx;
+    margin-top: 30rpx;
+}
+
+
+
+
+
+/* 余额明细 */
+.detailed{
+    width: 100%;
+    margin-top: 25rpx;
+    background-color: white;
+}
+
+.detailed>.det-title{
+    width: 100%;
+    height: 75rpx;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 22rpx;
+    border-bottom: 1rpx solid #F5F5F5;
+}
+
+.act{
+    color: #E59976;
+}
+
+
+.det-body{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30rpx;
+    border-bottom: 1rpx solid #F5F5F5;
+}
+
+.det-body>.body-right{
+    font-size: 26rpx;
+    color: #DE8E6A;
+}
+
+/* 充值弹框 */
+.recharge{
+    width: 100%;
+    height: 140rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.recharge>input{
+    width: 60%;
+    height: 110rpx;
+    font-size: 28rpx;
+    border-radius: 50rpx;
+    border: 1rpx solid gainsboro;
+    margin-bottom: 20rpx;
+    padding: 10rpx;
+}
+
+.recharge>.rechargeBut{
+    width: 200rpx;
+    height: 60rpx;
+    text-align: center;
+    line-height: 60rpx;
+    font-size: 28rpx;
+    color: white;
+    background-color: #FFA982;
+    border-radius: 50rpx;
+}
+
+
+.zhanwu{
+    width: 100%;
+    text-align: center;
+    font-size: 26rpx;
+    color: gray;
+    font-weight: bold;
+    line-height: 80rpx;
+    margin-top: 40rpx;
+  }

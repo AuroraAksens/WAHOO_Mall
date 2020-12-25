@@ -1,0 +1,224 @@
+/* pages/warehouse//house/house.wxss */
+page {
+    background-color: #F3F2F2;
+}
+
+.header {
+    width: 100%;
+    height: 90rpx;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20rpx 30rpx;
+    border-top: 1rpx solid #ebebeb80;
+}
+
+.header>.gro {
+    width: 18%;
+    height: 100%;
+    color: #DE8E6A;
+    text-align: center;
+    font-size: 26rpx;
+    font-weight: bold;
+    line-height: 60rpx;
+}
+
+.header>.search {
+    width: 100%;
+    height: 60rpx;
+    border: 1rpx solid #c5c5c5e1;
+    border-radius: 60rpx;
+    overflow: hidden;
+}
+
+.header>.search>input {
+    width: 100%;
+    height: 100%;
+    padding: 0 30rpx;
+}
+
+
+
+/* 商品模块 */
+.conBody {
+    width: 100%;
+    border-radius: 20rpx;
+    background-color: white;
+    margin-top: 20rpx;
+    padding: 25rpx;
+}
+
+.conBody>.top-box {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    position: relative;
+}
+
+.conBody>.top-box>image {
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 15rpx;
+}
+
+.conBody>.top-box>.t-right {
+    width: 75%;
+    margin-left: 25rpx;
+    display: flex;
+    align-self: start;
+    flex-direction: column;
+}
+.conBody>.top-box>.t-right>.tr-box{
+    width: 100%;
+    height: 50rpx;
+}
+.conBody>.top-box>.t-right>.tr-box>.trboxText{
+    font-size: 24rpx;
+    width: 160rpx;
+    position: absolute;
+    left: 130rpx;
+    padding-top: 20rpx;
+}
+.conBody>.top-box>.t-right>.tr-box>.trboxTexts {
+    width: 50rpx;
+    font-size: 80rpx;
+    position: absolute;
+    right: 20rpx;
+}
+
+/* .conBody>.top-box>.t-right>.tr-box>.cutrbox{
+    width: 70rpx;
+    font-size: 28rpx;
+    position: absolute;
+    text-align: center;
+    right: 55rpx;
+    bottom: -45rpx;
+} */
+
+
+.conBody>.bottom-box {
+    width: 100%;
+    border-radius: 15rpx;
+    margin-top: 20rpx;
+    padding: 10rpx 20rpx 10rpx 100rpx;
+    background-color: #F3F3F3;
+    position: relative;
+}
+
+.conBody>.bottom-box>.selectbox{
+    width: 40rpx;
+    height: 40rpx;
+    border-radius: 50rpx;
+    border: 1rpx solid #FFC0A1;
+    position: absolute;
+    left: 30rpx;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.selbj{
+    background-color: white;
+}
+.selbjs{
+    background-color: #FFC0A1;
+}
+
+
+
+.conBody>.bottom-box>.top-box {
+    font-size: 28rpx;
+    color: #46291F;
+    font-weight: bold;
+}
+
+.conBody>.bottom-box>.bot-box {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 28rpx;
+    margin-top: 30rpx;
+}
+
+.conBody>.bottom-box>.bot-box>.b-right {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.conBody>.bottom-box>.bot-box>.b-number{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.conBody>.bottom-box>.bot-box>.b-number>image{
+    width: 30rpx;
+    height: 30rpx;
+}
+
+.conBody>.bottom-box>.bot-box>.b-number>view{
+    padding: 0 10rpx;
+}
+
+/* 底部 */
+.bottom-but {
+    width: 100%;
+    height: 120rpx;
+    background-color: white;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 10px 11px rgba(178, 175, 175, 0.16);
+}
+
+.bottom-but>.but-box {
+    width: 690rpx;
+    height: 80rpx;
+    border-radius: 45rpx;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 80rpx;
+    font-weight: bold;
+    color: #46291F;
+    background: linear-gradient(90deg, #FF9966 0%, #FFC0A1 33%, #FFC0A1 68%, #FFA982 100%);
+}
+
+.bottom-but>.but-boxs {
+    width: 90%;
+    height: 70rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15rpx;
+}
+
+.bottom-but>.but-boxs>.box-right {
+    width: 690rpx;
+    height: 80rpx;
+    border-radius: 50rpx;
+    background: linear-gradient(90deg, #FF9966 0%, #FFC0A1 32%, #FFC0A1 68%, #FFA982 100%);
+    font-size: 28rpx;
+    font-weight: bold;
+    text-align: center;
+    line-height: 80rpx;
+}
+
+
+
+/* 暂无数据 */
+.zhanwu{
+    width: 100%;
+    font-size: 28rpx;
+    color: gray;
+    font-weight: bold;
+    line-height: 120rpx;
+    text-align: center;
+}

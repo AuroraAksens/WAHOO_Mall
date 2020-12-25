@@ -1,0 +1,33 @@
+<cu-custom bgColor="bg-white" isBack="{{true}}">
+    <view slot="content">添加银行卡</view>
+</cu-custom>
+
+
+
+<!-- 银行卡表单 -->
+<view class="from">
+    <view class="from-title">绑定银行卡</view>
+    <view class="from-body">
+
+        <view class="b-inp">
+            <view class="inp-title">持卡人</view>
+            <input type="text" bindinput="getname" placeholder="请输入姓名" placeholder-style="font-weight:500;" />
+        </view>
+
+        <view class="b-inp">
+            <view class="inp-title">银行名称</view>
+            <input type="text" bindinput="getidname" placeholder="请输入银行名称" placeholder-style="font-weight:500;" />
+        </view>
+
+        <view class="b-inp">
+            <view class="inp-title">卡号</view>
+            <input type="text" bindinput="getidnumber" placeholder="请输入卡号" placeholder-style="font-weight:500;" />
+        </view>
+
+    </view>
+
+    <view class="from-but" bind:tap="postBank">
+        确认
+    </view>
+</view>
+<!-- 银行卡表单结束 -->

@@ -1,0 +1,48 @@
+<cu-custom bgColor="bg-white" isBack="{{true}}">
+	<view slot="content">我的团队</view>
+</cu-custom>
+
+
+<!-- 顶部导航 -->
+<view class="topBar">
+    <view class="{{sel == 0 ? 'act' : ''}}" data-sel="0" bind:tap="selAct">直推下级({{p_member}})</view>
+    <view class="{{sel == 1 ? 'act' : ''}}" data-sel="1" bind:tap="selAct">平推团队({{m_member}})</view>
+</view>
+<!-- 顶部导航结束 -->
+
+
+
+<!-- 主体 -->
+<view class="teamBody" wx:if="{{teamdata.length != 0}}">
+    <view class="t-title" wx:if="{{sel == 0}}">
+        <image src="/image/infoicon/teamTitle.png" />
+        <view>直推下级明细</view> 
+    </view>
+    <view class="t-title" wx:if="{{sel == 1}}">
+        <image src="/image/infoicon/teamTitle.png" />
+        <view>平推团队明细</view> 
+    </view>
+    <view class="t-body">
+
+        <view class="tb-box" wx:for="{{teamdata}}" wx:key="index" data-id="{{item.user_id}}" data-name="{{item.nickname}}" data-image="{{item.avatar_image}}" data-member="{{item.member.level}}" bind:tap="goSubTeam">
+            <image src="{{item.avatar_image}}" />
+            <view class="box1">
+                <view class="m-box1">
+                    <view style="margin-bottom:20rpx">姓名：</view>
+                    <view style="margin-bottom:20rpx">代理级别：</view>
+                </view>
+                <view class="m-box1">
+                    <view style="margin-bottom:30rpx;font-size: 22rpx;">{{item.nickname}}</view>
+                    <view style="margin-bottom:30rpx;font-size: 22rpx;">{{item.member.level}}</view>
+                </view>
+            </view>
+            <view class="box2 cuIcon-right lg text-gray"></view>
+        </view>
+
+    </view>
+</view>
+<!-- 主体结束 -->
+
+
+
+<view wx:if="{{teamdata.length == 0}}" class="zahnwu">暂无数据</view>

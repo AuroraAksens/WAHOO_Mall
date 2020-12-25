@@ -1,0 +1,55 @@
+/* pages/warehouse//address/address.wxss */
+page {
+    background-color: #FBFBFB;
+}
+
+/* 表单 */
+.from {
+    width: 100%;
+    margin-top: 30rpx;
+    background-color: white;
+    border-radius: 20rpx;
+    padding: 30rpx 40rpx;
+}
+
+.from>.from-box {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    font-size: 28rpx;
+    border-bottom: 1rpx solid #E5E5E5;
+    padding-bottom: 20rpx;
+    margin-bottom: 40rpx;
+}
+
+.from>.from-box>.f-left {
+    width: 120rpx;
+    color: #46291F;
+    font-weight: bold;
+}
+
+.from>.from-box>.f-right {
+    width: 380rpx;
+    margin-left: 50rpx;
+    overflow: hidden;
+}
+
+.from>.from-box>.f-right>input {
+    width: 380rpx
+}
+
+
+/* 保存 */
+.saveBut {
+    width: 100%;
+    height: 90rpx;
+    border-radius: 15rpx;
+    background: linear-gradient(90deg, #FF9966 0%, #FFC0A1 32%, #FFC0A1 68%, #FFA982 100%);
+    text-align: center;
+    line-height: 90rpx;
+    font-size: 32rpx;
+    font-weight: bold;
+    margin-top: 30rpx;
+}
+

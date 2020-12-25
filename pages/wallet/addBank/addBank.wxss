@@ -1,0 +1,51 @@
+/* 银行卡表单 */
+.from {
+    width: 92%;
+    margin: 20rpx auto;
+}
+
+.from>.from-title {
+    font-size: 30rpx;
+    color: #FFC0A1;
+    font-weight: bold;
+    padding: 30rpx 0;
+}
+
+.from>.from-body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.from>.from-body>.b-inp {
+    width: 100%;
+    height: 80rpx;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 20rpx;
+    font-size: 30rpx;
+
+}
+
+.from>.from-body>.b-inp>.inp-title {
+    width: 160rpx;
+    color: #666666;
+}
+
+.from>.from-body>.b-inp>input {
+    width: 500rpx;
+}
+
+.from>.from-but {
+    width: 685rpx;
+    height: 100rpx;
+    border-radius: 15rpx;
+    text-align: center;
+    line-height: 100rpx;
+    font-size: 32rpx;
+    font-weight: bold;
+    margin-top: 40rpx;
+    background: linear-gradient(180deg, #FF9966 0%, #FFC0A1 33%, #FFC0A1 68%, #FFA982 100%);
+}

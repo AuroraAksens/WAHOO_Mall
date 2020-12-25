@@ -1,0 +1,63 @@
+<cu-custom bgColor="bg-white" isBack="{{true}}">
+	<view slot="content">添加收货地址</view>
+</cu-custom>
+<view class="index">
+
+<!-- 表单 -->
+	<view class="from">
+
+		<view class="from-box">
+			<view class="f-left">收货人</view>
+			<view class="f-right">
+				<input type="text" bindinput="getname" placeholder="请输入收货人姓名" />
+			</view>
+		</view>
+
+		<view class="from-box">
+			<view class="f-left">联系电话</view>
+			<view class="f-right">
+				<input type="text" bindinput="getphone" placeholder="请输入收货人手机或固话" />
+			</view>
+		</view>
+
+		<view class="from-box">
+			<view class="f-left">选择地区</view>
+			<view class="f-right">
+				<view class="section">
+					<picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+						<view class="picker">
+							{{region[0]}}，{{region[1]}}，{{region[2]}}
+						</view>
+					</picker>
+				</view>
+			</view>
+		</view>
+
+		<view class="from-box">
+			<view class="f-left">详细地址</view>
+			<view class="f-right">
+				<input type="text" bindinput="getaddress" placeholder="请输入街道门牌信息" />
+			</view>
+		</view>
+
+		<!-- <view class="from-box" style="margin-bottom: 10rpx;">
+			<view class="f-left">设置默认地址</view>
+			<view class="f-right" style="width: 180rpx;">
+				<label class="checkbox">
+        			<checkbox value="cb" checked="true"/>
+      			</label>
+			</view>
+		</view> -->
+
+	</view>
+<!-- 表单结束 -->
+
+
+<!-- 保存 -->
+<view class="saveBut" bindtap="postaddress">
+	添加地址
+</view>
+<!-- 保存结束 -->
+
+
+</view>

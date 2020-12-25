@@ -1,0 +1,50 @@
+<cu-custom bgColor="bg-white" isBack="{{true}}">
+	<view slot="content">商品列表</view>
+</cu-custom>
+
+<!-- 搜索框 -->
+<view class="search">
+    <input type="text" bindblur="searchData" focus="{{search}}" placeholder="输入搜索产品" />
+</view>
+<!-- 搜索框结束 -->
+
+
+
+<!-- 导航条 -->
+<view class="navBar">
+    <view class="nav-box" data-sel="0" bind:tap="selectNav">
+        <view class="m-nav {{sel == 0 ? 'act' : 'ac'}}">全部</view> 
+    </view>
+    <view class="nav-box" data-sel="1" bind:tap="selectNav">
+        <view class="m-nav {{sel == 1 ? 'act' : 'ac'}}">销量</view>
+    </view>
+    <view class="nav-box" data-sel="2" bind:tap="selectNav">
+        <view bind:tap="sorttap" class="m-nav {{sel == 2 ? 'act' : 'ac'}}">价格</view>
+        <text class="{{sort == 1 ? 'cuIcon-triangleupfill lg text-gray' : 'cuIcon-triangledownfill lg text-gray'}}"></text>
+    </view>
+</view>
+<!-- 导航条结束 -->
+
+
+
+<!-- 商品列表 -->
+<view class="orderList">
+    <view class="orderBox" wx:if="{{listData.length != 0}}" wx:for="{{listData}}" wx:key="index" data-id="{{item.product_id}}" bind:tap="goComDeta">
+        <image mode="scaleToFill" src="{{item.image}}" />
+        <view class="b-bottom">
+            <view class="bm1">{{item.title}}</view>
+            <view class="bm2">{{item.account}}</view>
+            <view class="bm3">
+                <view>￥{{item.price}}</view>
+                <view wx:if="{{member != 0 && item.rebate_price}}">会员 ￥{{item.rebate_price}}</view>
+            </view>
+        </view>
+    </view>
+
+    <view class="zhanwu" wx:if="{{listData.length == 0}}">暂无商品数据</view>
+</view>
+<!-- 商品列表结束 -->
+
+
+
+

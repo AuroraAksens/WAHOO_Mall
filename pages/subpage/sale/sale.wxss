@@ -1,0 +1,111 @@
+page{
+    background-color: #F5F5F5;
+}
+/* 顶部卡片 */
+.top {
+    background: linear-gradient(134deg, #DE8E6A 0%, #FFC0A1 32%, #FFC0A1 68%, #DE8E6A 100%);
+    width: 100%;
+    height: 340rpx;
+    display: flex;
+    flex-direction: column;
+}
+
+.top>.top1 {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 40rpx 40rpx;
+}
+
+.top>.top1>.top1-left {
+    color: #FCFBFB;
+}
+
+.top>.top1>.top1-right {
+    color: #FCFBFB;
+}
+
+.top>.top2 {
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.28) 0%, rgba(255, 255, 255, 0.14) 100%);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.top>.top2>.t-box{
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.top>.top2>.xian {
+    width: 0rpx;
+    height: 30rpx;
+    border: 2rpx solid #FFFFFF;
+    opacity: 0.8;
+}
+
+
+/* 主体部分 */
+.saleBody{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.saleBody>.body-top{
+    width: 100%;
+    padding: 30rpx 40rpx;
+    color: #C6C6C6;
+    font-size: 30rpx;
+    font-weight: bold;
+}
+
+.body-box{
+    width: 100%;
+    padding: 30rpx;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    position: relative;
+    background-color: white;
+    border-bottom: 1rpx solid #70707041;
+}
+
+.body-box>image{
+    width: 90rpx;
+    height: 90rpx;
+    border-radius: 15rpx;
+}
+
+.body-box>.box1{
+    display: flex;
+    justify-content: start;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-left: 35rpx;
+}
+
+.body-box>.box2{
+    color: #828282;
+    position: absolute;
+    right: 40rpx;
+}
+
+
+
+.zhanwu{
+    width: 100%;
+    text-align: center;
+    font-size: 26rpx;
+    color: #828282;
+    font-weight: bold;
+    line-height: 80rpx;
+    margin-top: 40rpx;
+  }

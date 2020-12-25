@@ -1,0 +1,55 @@
+<cu-custom bgColor="bg-white" isBack="{{true}}">
+	<view slot="content">提现</view>
+</cu-custom>
+<view class="index">
+
+    <!-- 顶部卡片 -->
+    <view class="topCard">
+        <view class="min-card" bind:tap="gomoneyde">
+            <image src="/image/infoicon/detailed.png" />
+            提现明细
+        </view>
+        <view class="text">
+            <view style="font-size: 32rpx;font-weight: bold;color:#46291F">可提现金额(元)</view>
+            <view style="font-size: 36rpx;font-weight: bold;color:#C37239;margin-top:30rpx">{{bond}}</view>
+        </view>
+    </view>
+    <!-- 顶部卡片结束 -->
+
+
+    <!-- 主体卡片 -->
+    <view class="bodyCard">
+        <view class="topTake">
+            <view>提现方式</view>
+            <view>银行卡</view>
+        </view>
+        <view class="topTake" bind:tap="goBank">
+            <view>选择银行</view>
+            <view wx:if="{{check == 0}}" style="color: rgb(241, 165, 66);" bind:tap="addBank">请添加银行卡</view>
+            <view wx:if="{{check == 1}}" style="color: rgb(241, 165, 66);" bind:tap="goBank">{{bankid == '' ? '请选择银行' : bankid.bank_name }}</view>
+        </view>
+        <view class="bodyTake">
+            <view class="bt1">可提现金额(元)</view>
+            <view class="bt2">
+                <input type="text" value="{{bonds}}" bindinput="getTM" type="digit" placeholder="￥请输入提现金额" placeholder-style="color: #C37239;opacity: 0.4;" />
+                <view bind:tap="getAll">全部提现</view>
+            </view>
+            <view class="bt3">备注：提现后估计1~2天到账</view>
+        </view>
+        <view class="goTake" bindtap="takeNoy">
+            确认提现
+        </view>
+    </view>
+    <!-- 主体卡片结束 -->
+
+
+
+    <!-- 底部说明 -->
+    <view class="foot-box">
+        <view class="ftb1">提现说明</view>
+        <view class="ftb2">1.每天最多可提现3次，提现金额不低于{{takeMoney}}元</view>
+    </view>
+    <!-- 底部说明结束 -->
+
+
+</view>

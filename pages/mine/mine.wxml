@@ -1,0 +1,173 @@
+<cu-custom bgColor="bg-white">
+	<view slot="content">我的</view>
+</cu-custom>
+
+<scroll-view scroll-y="true" style="height:calc(100vh - 100rpx)">
+
+<!-- 置顶背景 -->
+<view class="topImg">
+	<image src="/image/member/top3.png" />
+</view>
+<!-- 置顶背景结束 -->
+
+<view class="index" style="padding-bottom:220rpx">
+
+	<!-- 登录框 -->
+	<view class="login" wx:if="{{loginSta == 0}}">
+		<view class="logLeft">
+			<view class="tou">
+				<image mode="aspectFill" src="/image/touxiang.png" />
+			</view>
+			<view class="name">
+				<view style="font-size: 32rpx;font-weight: bold;margin-top: 30rpx;">请允许授权~</view>
+				<!-- <view style="font-size: 26rpx;margin-top: 10rpx;">绑定号码：1302****392</view> -->
+			</view>
+		</view>
+		<view class="logRight">
+			<button class="loginBut" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权信息</button>
+		</view>
+	</view>
+
+	<view class="login" wx:if="{{loginSta == 1}}">
+		<view class="logLeft">
+			<view class="tou">
+				<image mode="aspectFill" src="/image/touxiang.png" />
+			</view>
+			<view class="name">
+				<view style="font-size: 32rpx;font-weight: bold;margin-top: 30rpx;">请登录~</view>
+				<!-- <view style="font-size: 26rpx;margin-top: 10rpx;">请允许授权获取手机号</view> -->
+			</view>
+		</view>
+		<view class="logRight">
+			<button class="loginBut" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">登录</button>
+		</view>
+	</view>
+
+	<view class="login" wx:if="{{loginSta == 2}}">
+		<view class="logLeft">
+			<view class="tou">
+				<image mode="aspectFill" src="{{userData.avatar_image}}" />
+			</view>
+			<view class="name">
+				<view>
+					<view class="name-box">{{userData.nickname}}</view>
+					<view class="name-image">
+						<image wx:if="{{userData.member.grade == 1}}" src="/image/vip/vip1.png" />
+						<image wx:if="{{userData.member.grade == 2}}" src="/image/vip/vip2.png" />
+						<image wx:if="{{userData.member.grade == 3}}" src="/image/vip/vip3.png" />
+						<image wx:if="{{userData.member.grade == 4}}" src="/image/vip/vip4.png" />
+					</view>
+				</view>
+				<view style="font-size: 26rpx;margin-top: 10rpx;">绑定号码：{{userData.phone}}</view>
+			</view>
+		</view>
+		<view class="logRight">
+			<button class="loginButs" wx:if="{{userData.member != null}}" bind:tap="onCreateOtherPoster">推广</button>
+		</view>
+	</view>
+	<!-- 登录框结束 -->
+
+
+	<!-- 个人信息框 -->
+	<view class="mineMes" wx:if="{{userData.member != null}}">
+		<view class="topCard" bindtap="{{loginSta == 2 ? 'goMineWallet' : 'checkLogin'}}">
+			<view>账户资产</view>
+			<view>我的钱包 ></view>
+		</view>
+		<view class="mesXian"></view>
+		<view class="bottomCard">
+			<view class="leftCard">
+				<view wx:if="{{loginSta == 2}}" style="color: #E79C79;margin-bottom: 10rpx;">￥{{userData.balance}}</view>
+				<view wx:if="{{loginSta == 0 || loginSta == 1}}" style="color: #E79C79;margin-bottom: 10rpx;">￥0</view>
+				<view>可用余额</view>
+			</view>
+			<view class="cardXian"></view>
+			<view class="rightCard">
+				<view wx:if="{{loginSta == 2}}" style="color: #E79C79;margin-bottom: 10rpx;">￥{{userData.payment}}</view>
+				<view wx:if="{{loginSta == 0 || loginSta == 1}}" style="color: #E79C79;margin-bottom: 10rpx;">￥0 </view>
+				<view>提货额度</view>
+			</view>
+		</view>
+	</view>
+	<!-- 个人信息框结束 -->
+
+
+	<!-- 上级信息 -->
+	<view class="list"wx:if="{{userData.p_userInfo != null}}">
+		<!-- <view class="listTitle">
+			上级信息
+		</view> -->
+		<view class="superiorBody">
+			<image class="superiorImg" src="/image/infoicon/superior.png" />
+			<view class="superior">
+				<image src="{{userData.p_userInfo.avatar_image}}" />
+				<view class="supBox">
+					<view class="name">
+						<view>{{userData.p_userInfo.nickname}}</view>
+						<view class="nvip">上级代理</view>
+					</view>
+					<view class="vip" wx:if="{{userData.p_userInfo.member.grade == 1}}">会员</view>
+					<view class="vip" wx:if="{{userData.p_userInfo.member.grade == 2}}">VIP</view>
+					<view class="vip" wx:if="{{userData.p_userInfo.member.grade == 3}}">VVIP</view>
+					<view class="vip" wx:if="{{userData.p_userInfo.member.grade == 4}}">WVIP</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<!-- 上级信息结束 -->
+
+
+	<!-- 订单管理 -->
+	<view class="list" wx:if="{{userData.member != null}}">
+		<view class="listTitle">
+			订单管理
+		</view>
+		<view class="listBody">
+			<view class="b-box" wx:for="{{orderList}}" wx:key="index" data-pageUrl="{{item.pages}}" bind:tap="{{loginSta == 2 ? 'gotoOrder' : 'checkLogin'}}">
+				<image src="{{item.image}}"/>
+				<view>{{item.name}}</view>
+			</view>
+		</view>
+	</view>
+	<!-- 订单管理结束 -->
+
+
+	<!-- 常用功能 - 有会员 -->
+	<view class="list" wx:if="{{userData.member != null}}">
+		<view class="listTitle">
+			常用功能
+		</view>
+		<view class="listBody">
+			<view class="b-box" wx:for="{{List}}" wx:key="index" data-pageUrl="{{item.pages}}" data-memid="{{userData.member_id}}" bind:tap="{{loginSta == 2 ? 'gotofun' : 'checkLogin'}}">
+				<image src="{{item.image}}"/>
+				<view>{{item.name}}</view>
+			</view>
+		</view>
+	</view>
+	<!-- 常用功能 - 有会员 结束 -->
+
+
+
+	<!-- 常用功能 - 无会员 -->
+	<view class="list" wx:if="{{userData.member == null}}">
+		<view class="listTitle">
+			常用功能
+		</view>
+		<view class="listBody">
+			<view class="b-box" wx:for="{{ListOrd}}" wx:key="index" data-pageUrl="{{item.pages}}" data-memid="{{userData.member_id}}" bind:tap="{{loginSta == 2 ? 'gotofun' : 'checkLogin'}}">
+				<image src="{{item.image}}"/>
+				<view>{{item.name}}</view>
+			</view>
+		</view>
+	</view>
+	<!-- 常用功能 - 无会员 结束 -->
+
+
+</view>
+
+
+</scroll-view>
+
+
+
+
